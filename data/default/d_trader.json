@@ -1,0 +1,68 @@
+[
+  {
+    "_id": {
+      "$oid": "5ed59b60cbd8b7199c77d160"
+    },
+    "_class": "trader",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "money": 1000,
+    "user": {
+      "$oid": "5ebcbee6697a6c1b106d3fc0"
+    },
+    "_createdAt": {
+      "$date": "2020-06-02T00:20:48.041Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-25T00:38:47.507Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ed5ae69e95b590b4ca06b75"
+    },
+    "_class": "trader",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "money": 1000,
+    "user": {
+      "$oid": "5ebcbee6697a6c1b106d3fc2"
+    },
+    "_createdAt": {
+      "$date": "2020-06-02T01:42:01.253Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-24T01:25:25.477Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef29cf7b79ac81008c73eb2"
+    },
+    "_class": "trader",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "money": 1000,
+    "user": {
+      "$oid": "5ebcbee6697a6c1b106d3fc4"
+    },
+    "_createdAt": {
+      "$date": "2020-06-24T00:23:19.052Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-24T08:15:50.858Z"
+    }
+  }
+]

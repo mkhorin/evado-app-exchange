@@ -1,0 +1,56 @@
+[
+  {
+    "_id": {
+      "$oid": "5ee6af6f8fef5f1ef4355125"
+    },
+    "name": "virus.svg",
+    "mime": "image/svg+xml",
+    "size": 1205,
+    "file": "2020-06/5ee6af6f8fef5f1ef4355124",
+    "createdAt": {
+      "$date": "2020-06-14T23:14:55.553Z"
+    },
+    "creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "owner": {
+      "$oid": "5ee6af708fef5f1ef4355126"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ee6af8b8fef5f1ef4355128"
+    },
+    "name": "atom.svg",
+    "mime": "image/svg+xml",
+    "size": 3652,
+    "file": "2020-06/5ee6af8b8fef5f1ef4355127",
+    "createdAt": {
+      "$date": "2020-06-14T23:15:23.551Z"
+    },
+    "creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "owner": {
+      "$oid": "5ee6af8d8fef5f1ef4355129"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef29d73b79ac81008c73eb8"
+    },
+    "name": "leaf.svg",
+    "mime": "image/svg+xml",
+    "size": 801,
+    "file": "2020-06/5ef29d73b79ac81008c73eb7",
+    "createdAt": {
+      "$date": "2020-06-24T00:25:23.040Z"
+    },
+    "creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "owner": {
+      "$oid": "5ef29d75b79ac81008c73eb9"
+    }
+  }
+]

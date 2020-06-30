@@ -1,0 +1,259 @@
+[
+  {
+    "_id": {
+      "$oid": "5ef53e083570080fd83f2f3f"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc0"
+    },
+    "owner": {
+      "$oid": "5ed59b60cbd8b7199c77d160"
+    },
+    "type": "sale",
+    "company": {
+      "$oid": "5ed59b3ccbd8b7199c77d15e"
+    },
+    "shares": 10,
+    "value": 150,
+    "_state": "active",
+    "_createdAt": {
+      "$date": "2020-06-26T00:15:04.204Z"
+    },
+    "_transiting": null
+  },
+  {
+    "_id": {
+      "$oid": "5ef53e363570080fd83f2f40"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc0"
+    },
+    "owner": {
+      "$oid": "5ed59b60cbd8b7199c77d160"
+    },
+    "type": "purchase",
+    "company": {
+      "$oid": "5ed59b48cbd8b7199c77d15f"
+    },
+    "shares": 20,
+    "value": 200,
+    "_state": "active",
+    "_createdAt": {
+      "$date": "2020-06-26T00:15:50.320Z"
+    },
+    "_transiting": null
+  },
+  {
+    "_id": {
+      "$oid": "5ef53e703570080fd83f2f42"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc2"
+    },
+    "owner": {
+      "$oid": "5ed5ae69e95b590b4ca06b75"
+    },
+    "type": "sale",
+    "company": {
+      "$oid": "5ed59b48cbd8b7199c77d15f"
+    },
+    "shares": 25,
+    "value": 120,
+    "_state": "active",
+    "_createdAt": {
+      "$date": "2020-06-26T00:16:48.675Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fc2"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-26T00:17:11.492Z"
+    },
+    "_transiting": null
+  },
+  {
+    "_id": {
+      "$oid": "5ef53e7b3570080fd83f2f43"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc2"
+    },
+    "owner": {
+      "$oid": "5ed5ae69e95b590b4ca06b75"
+    },
+    "type": "purchase",
+    "company": {
+      "$oid": "5ef29d79b79ac81008c73eba"
+    },
+    "shares": 20,
+    "value": 200,
+    "_state": "active",
+    "_createdAt": {
+      "$date": "2020-06-26T00:16:59.236Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fc2"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-26T00:17:01.184Z"
+    },
+    "_transiting": null
+  },
+  {
+    "_id": {
+      "$oid": "5ef53e963570080fd83f2f44"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc2"
+    },
+    "owner": {
+      "$oid": "5ed5ae69e95b590b4ca06b75"
+    },
+    "type": "purchase",
+    "company": {
+      "$oid": "5ed59b3ccbd8b7199c77d15e"
+    },
+    "shares": 40,
+    "value": 350,
+    "_state": "draft",
+    "_createdAt": {
+      "$date": "2020-06-26T00:17:26.767Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef53ec83570080fd83f2f46"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc4"
+    },
+    "owner": {
+      "$oid": "5ef29cf7b79ac81008c73eb2"
+    },
+    "type": "sale",
+    "company": {
+      "$oid": "5ef29d79b79ac81008c73eba"
+    },
+    "shares": 50,
+    "value": 600,
+    "_state": "active",
+    "_createdAt": {
+      "$date": "2020-06-26T00:18:16.958Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fc4"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-26T00:18:19.263Z"
+    },
+    "_transiting": null
+  },
+  {
+    "_id": {
+      "$oid": "5ef53eda3570080fd83f2f47"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc4"
+    },
+    "owner": {
+      "$oid": "5ef29cf7b79ac81008c73eb2"
+    },
+    "type": "purchase",
+    "company": {
+      "$oid": "5ed59b3ccbd8b7199c77d15e"
+    },
+    "shares": 25,
+    "value": 300,
+    "_state": "active",
+    "_createdAt": {
+      "$date": "2020-06-26T00:18:34.079Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fc4"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-26T00:18:40.754Z"
+    },
+    "_transiting": null
+  },
+  {
+    "_id": {
+      "$oid": "5ef53eea3570080fd83f2f48"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc4"
+    },
+    "owner": {
+      "$oid": "5ef29cf7b79ac81008c73eb2"
+    },
+    "type": "purchase",
+    "company": {
+      "$oid": "5ed59b48cbd8b7199c77d15f"
+    },
+    "shares": 25,
+    "value": 250,
+    "_state": "draft",
+    "_createdAt": {
+      "$date": "2020-06-26T00:18:50.767Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef53f263570080fd83f2f4a"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc0"
+    },
+    "owner": {
+      "$oid": "5ed59b60cbd8b7199c77d160"
+    },
+    "type": "sale",
+    "company": {
+      "$oid": "5ef29d79b79ac81008c73eba"
+    },
+    "shares": 15,
+    "value": 95,
+    "_state": "active",
+    "_createdAt": {
+      "$date": "2020-06-26T00:19:50.025Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fc0"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-26T00:19:52.944Z"
+    },
+    "_transiting": null
+  },
+  {
+    "_id": {
+      "$oid": "5ef53f393570080fd83f2f4b"
+    },
+    "_class": "lot",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fc0"
+    },
+    "owner": {
+      "$oid": "5ed59b60cbd8b7199c77d160"
+    },
+    "type": "purchase",
+    "company": {
+      "$oid": "5ed59b3ccbd8b7199c77d15e"
+    },
+    "shares": 30,
+    "value": 100,
+    "_state": "draft",
+    "_createdAt": {
+      "$date": "2020-06-26T00:20:09.648Z"
+    }
+  }
+]

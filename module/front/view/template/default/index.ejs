@@ -1,0 +1,33 @@
+<%
+layout(_view.get('_layout/content'));
+
+script('front/script/Front.js');
+script('front/script/Form.js');
+script('front/script/Page.js');
+script('front/script/Company.js');
+script('front/script/Lot.js');
+script('front/script/Money.js');
+script('front/script/Stock.js');
+script('front/script/module.js');
+
+const dataUrl = _url('/api/base/data/');
+const fileUrl = _url('/api/base/file/');
+const metaUrl = _url('/api/base/meta/');
+%>
+
+<div class="front"
+     data-guest="<%- _controller.user.isGuest() %>"
+     data-user="<%- _controller.user.getId() %>"
+     data-data-url="<%- dataUrl %>"
+     data-meta-url="<%- metaUrl %>">
+
+    <%- include('./_main') %>
+    <%- include('./_company') %>
+    <%- include('./_lots') %>
+    <%- include('./_lot') %>
+    <%- include('./_myLots') %>
+    <%- include('./_myLot') %>
+    <%- include('./_newLot') %>
+    <%- include('./_myStocks') %>
+    <%- include('./_stock') %>
+</div>

@@ -1,0 +1,145 @@
+<div class="my-lot-modal modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" data-t="">My lot</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-error alert-danger alert hidden"></div>
+                <div class="loadable-container" data-handler="MyLot">
+                    <div class="loadable-content"></div>
+                    <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+
+                    <template data-id="read">
+                        <div class="form-horizontal form">
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label">ID</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{_id}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">State</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static" data-t="meta.class.lot">{{state}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Type</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static" data-t="meta.class.lot">{{type}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Company</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{company}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Shares</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{shares}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Value</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{value}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Owner</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{owner}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Getter</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{getter}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Deal date</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{dealDate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template data-id="edit">
+                        <div class="form-horizontal form" data-handler="Form">
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label">ID</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{_id}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">State</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{state}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group required">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Type</label>
+                                <div class="col-md-9">
+                                    <select name="type" class="form-control">
+                                        <option value="sale" data-t="meta.class.lot">Sale</option>
+                                        <option value="purchase" data-t="meta.class.lot">Purchase</option>
+                                    </select>
+                                    <div class="error-block"></div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Company</label>
+                                <div class="col-md-9">
+                                    <div class="form-control-static">{{company}}</div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group required">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Shares</label>
+                                <div class="col-md-9">
+                                    <input type="text" name="shares" class="form-control" value="{{shares}}">
+                                    <div class="error-block"></div>
+                                </div>
+                            </div>
+                            <div class="form-attr form-group required">
+                                <label class="col-md-3 control-label" data-t="meta.class.lot">Value</label>
+                                <div class="col-md-9">
+                                    <input type="text" name="value" class="form-control" value="{{value}}">
+                                    <div class="error-block"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template data-id="error">
+                        <div class="alert-danger alert">{{text}}</div>
+                    </template>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary btn" data-command="save">
+                    <span data-t="">Save</span>
+                </button>
+                <button class="btn-success btn" data-command="activate">
+                    <span data-t="">Activate</span>
+                </button>
+                <button class="btn-primary btn" data-command="deactivate">
+                    <span data-t="">Deactivate</span>
+                </button>
+                <button class="btn-danger btn" data-command="delete">
+                    <span data-t="">Delete</span>
+                </button>
+                <button class="btn-default btn" data-dismiss="modal">
+                    <span data-t="">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

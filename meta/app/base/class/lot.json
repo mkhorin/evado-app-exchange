@@ -1,0 +1,280 @@
+{
+  "abstract": false,
+  "label": "Lot",
+  "attrs": [
+    {
+      "name": "_state",
+      "label": "State",
+      "type": "string",
+      "viewType": "state",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": false,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": false,
+      "unique": false
+    },
+    {
+      "name": "type",
+      "label": "Type",
+      "type": "string",
+      "viewType": "radioList",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": false,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "enums": [
+        {
+          "items": [
+            {
+              "value": "sale",
+              "text": "Sale",
+              "orderNumber": 10
+            },
+            {
+              "value": "purchase",
+              "text": "Purchase",
+              "orderNumber": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "company",
+      "label": "Company",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "company",
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "shares",
+      "label": "Shares",
+      "type": "integer",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 40,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "number",
+          "orderNumber": 10,
+          "integerOnly": true,
+          "min": 1
+        },
+        {
+          "type": "custom",
+          "orderNumber": 20,
+          "config": {
+            "Class": "component/meta/validator/LotSharesValidator"
+          }
+        }
+      ]
+    },
+    {
+      "name": "value",
+      "label": "Value",
+      "type": "integer",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 50,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "number",
+          "orderNumber": 10,
+          "integerOnly": true,
+          "min": 1
+        },
+        {
+          "type": "custom",
+          "orderNumber": 20,
+          "config": {
+            "Class": "component/meta/validator/LotValueValidator"
+          }
+        }
+      ]
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "eagerView": "publicView",
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 60,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "trader",
+      "readOnly": true,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "defaultValue": [
+        "$query",
+        "id",
+        "trader",
+        {},
+        {
+          "user": "$user"
+        }
+      ]
+    },
+    {
+      "name": "getter",
+      "label": "Getter",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "eagerView": "publicView",
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "null",
+      "orderNumber": 70,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "trader",
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "dealDate",
+      "label": "Deal date",
+      "type": "date",
+      "viewType": "localDatetime",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 80,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ],
+  "states": [
+    {
+      "name": "draft",
+      "label": "Draft",
+      "defaults": true,
+      "readOnly": false
+    },
+    {
+      "name": "active",
+      "label": "Active",
+      "defaults": false,
+      "readOnly": true
+    },
+    {
+      "name": "closed",
+      "label": "Closed",
+      "defaults": false,
+      "readOnly": true
+    }
+  ],
+  "transitions": [
+    {
+      "name": "activate",
+      "label": "Activate",
+      "hint": "Make this lot available for dealing",
+      "nullStartState": false,
+      "startStates": [
+        "draft"
+      ],
+      "finalState": "active",
+      "orderNumber": 10
+    },
+    {
+      "name": "deactivate",
+      "label": "Deactivate",
+      "nullStartState": false,
+      "startStates": [
+        "active"
+      ],
+      "finalState": "draft",
+      "orderNumber": 20
+    }
+  ]
+}

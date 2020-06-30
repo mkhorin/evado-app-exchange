@@ -1,0 +1,20 @@
+<div class="account-block">
+    <% if (!_controller.user.isGuest()) { %>
+    <div class="money-block">
+        <span>$</span>
+        <b title="My money" data-t-title="" data-handler="MoneyTitle">-</b>
+    </div>
+    <% } %>
+
+    <div class="lot-toggle" data-action="lots" data-t="" title="Active lots">Lots</div>
+
+    <div class="user-toggle">
+        <div class="dropdown-toggle" title="Account" data-toggle="dropdown">
+            <span class="icon fa fa-user"></span>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="#" data-action="myStocks" data-t="">My stocks</a></li>
+            <li><a href="#" data-action="myLots" data-t="">My lots</a></li>
+        </ul>
+    </div>
+</div>

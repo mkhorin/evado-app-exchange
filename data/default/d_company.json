@@ -1,0 +1,74 @@
+[
+  {
+    "_id": {
+      "$oid": "5ed59b3ccbd8b7199c77d15e"
+    },
+    "_class": "company",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "name": "Netus",
+    "shares": 800,
+    "_createdAt": {
+      "$date": "2020-06-02T00:20:12.108Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-24T00:30:05.801Z"
+    },
+    "description": "Pretium at dis iaculis pellentesque at eget mattis nibh nibh ultrices. Pede tempor sed Maecenas nibh amet interdum Nullam Suspendisse velit nibh. Molestie Vestibulum orci pretium interdum tristique amet vitae dis vitae et. Netus ligula semper consequat malesuada sapien eget In In libero ultrices. Laoreet Suspendisse nulla et velit.",
+    "logo": {
+      "$oid": "5ee6af708fef5f1ef4355126"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ed59b48cbd8b7199c77d15f"
+    },
+    "_class": "company",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "name": "Laoreet",
+    "shares": 500,
+    "_createdAt": {
+      "$date": "2020-06-02T00:20:24.243Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-24T00:29:07.555Z"
+    },
+    "description": "Lorem ipsum dolor sit amet consectetuer ligula nonummy id et sagittis. Nibh velit amet augue laoreet ac laoreet vitae pede nunc in. Laoreet condimentum mauris Donec fringilla a cursus ut interdum fermentum In.",
+    "logo": {
+      "$oid": "5ef29d75b79ac81008c73eb9"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef29d79b79ac81008c73eba"
+    },
+    "_class": "company",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "name": "Amet",
+    "description": "Amet Praesent et Pellentesque at id lacus nibh sed aliquam netus. Vel porta tincidunt laoreet Nulla Sed consequat est nisl morbi ligula. In amet mi malesuada ipsum leo turpis massa ac purus sit.",
+    "logo": {
+      "$oid": "5ee6af8d8fef5f1ef4355129"
+    },
+    "shares": 300,
+    "_createdAt": {
+      "$date": "2020-06-24T00:25:29.783Z"
+    },
+    "_editor": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "_updatedAt": {
+      "$date": "2020-06-24T00:29:52.214Z"
+    }
+  }
+]

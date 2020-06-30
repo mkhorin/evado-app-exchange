@@ -1,0 +1,47 @@
+[
+  {
+    "_id": {
+      "$oid": "5ee6af708fef5f1ef4355126"
+    },
+    "_class": "logo",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "file": "2020-06/5ee6af6f8fef5f1ef4355124",
+    "_size": 1205,
+    "_mime": "image/svg+xml",
+    "_createdAt": {
+      "$date": "2020-06-14T23:14:56.929Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ee6af8d8fef5f1ef4355129"
+    },
+    "_class": "logo",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "file": "2020-06/5ee6af8b8fef5f1ef4355127",
+    "_size": 3652,
+    "_mime": "image/svg+xml",
+    "_createdAt": {
+      "$date": "2020-06-14T23:15:25.486Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef29d75b79ac81008c73eb9"
+    },
+    "_class": "logo",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "file": "2020-06/5ef29d73b79ac81008c73eb7",
+    "_size": 801,
+    "_mime": "image/svg+xml",
+    "_createdAt": {
+      "$date": "2020-06-24T00:25:25.413Z"
+    }
+  }
+]

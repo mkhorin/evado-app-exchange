@@ -1,0 +1,32 @@
+{
+  "description": "Default list",
+  "attrs": [
+    {
+      "name": "_state",
+      "orderNumber": 10
+    },
+    {
+      "name": "type",
+      "orderNumber": 20
+    },
+    {
+      "name": "company",
+      "eagerLoading": true,
+      "orderNumber": 30
+    },
+    {
+      "name": "shares",
+      "orderNumber": 40
+    },
+    {
+      "name": "value",
+      "orderNumber": 50
+    },
+    {
+      "name": "owner",
+      "eagerLoading": true,
+      "eagerView": "publicView",
+      "orderNumber": 60
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "abstract": false,
+  "label": "Stock",
+  "attrs": [
+    {
+      "name": "company",
+      "label": "Company",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "add",
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "company",
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "unique",
+          "orderNumber": 10,
+          "filter": "owner",
+          "ignoreCase": false
+        }
+      ]
+    },
+    {
+      "name": "shares",
+      "label": "Shares",
+      "type": "integer",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "defaultValue": 0,
+      "rules": [
+        {
+          "type": "number",
+          "orderNumber": 10,
+          "integerOnly": false,
+          "min": 0
+        },
+        {
+          "type": "custom",
+          "orderNumber": 20,
+          "config": {
+            "Class": "component/meta/validator/CompanySharesValidator"
+          }
+        }
+      ]
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "add",
+        "create",
+        "edit"
+      ],
+      "commonSearchable": true,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "trader",
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "lots",
+      "label": "Lots",
+      "type": "backref",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "linkAttr": "owner",
+      "listView": "stockLots",
+      "multiple": true,
+      "orderNumber": 40,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "owner",
+      "refClass": "lot",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "filter": {
+        "Class": "component/meta/filter/StockLotsFilter"
+      }
+    }
+  ]
+}

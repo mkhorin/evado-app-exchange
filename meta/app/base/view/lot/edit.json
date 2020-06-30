@@ -1,0 +1,41 @@
+{
+  "description": "Default edit",
+  "attrs": [
+    {
+      "name": "_state",
+      "orderNumber": 10
+    },
+    {
+      "name": "type",
+      "orderNumber": 20
+    },
+    {
+      "name": "company",
+      "eagerLoading": true,
+      "orderNumber": 30,
+      "readOnly": true
+    },
+    {
+      "name": "shares",
+      "orderNumber": 40
+    },
+    {
+      "name": "value",
+      "orderNumber": 50
+    },
+    {
+      "name": "owner",
+      "eagerLoading": true,
+      "orderNumber": 60
+    },
+    {
+      "name": "getter",
+      "eagerLoading": true,
+      "orderNumber": 70
+    },
+    {
+      "name": "dealDate",
+      "orderNumber": 80
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+/log
+/tests
+/temp
+node_modules
+config/*.local.js

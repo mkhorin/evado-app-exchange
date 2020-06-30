@@ -1,0 +1,97 @@
+[
+  {
+    "_id": {
+      "$oid": "5ef53d943570080fd83f2f3a"
+    },
+    "_class": "stock",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "shares": 50,
+    "company": {
+      "$oid": "5ed59b3ccbd8b7199c77d15e"
+    },
+    "owner": {
+      "$oid": "5ed59b60cbd8b7199c77d160"
+    },
+    "_createdAt": {
+      "$date": "2020-06-26T00:13:08.843Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef53da13570080fd83f2f3b"
+    },
+    "_class": "stock",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "shares": 100,
+    "company": {
+      "$oid": "5ef29d79b79ac81008c73eba"
+    },
+    "owner": {
+      "$oid": "5ed59b60cbd8b7199c77d160"
+    },
+    "_createdAt": {
+      "$date": "2020-06-26T00:13:21.863Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef53db03570080fd83f2f3c"
+    },
+    "_class": "stock",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "shares": 75,
+    "company": {
+      "$oid": "5ed59b48cbd8b7199c77d15f"
+    },
+    "owner": {
+      "$oid": "5ed5ae69e95b590b4ca06b75"
+    },
+    "_createdAt": {
+      "$date": "2020-06-26T00:13:36.876Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef53dc03570080fd83f2f3d"
+    },
+    "_class": "stock",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "shares": 10,
+    "company": {
+      "$oid": "5ed59b48cbd8b7199c77d15f"
+    },
+    "owner": {
+      "$oid": "5ef29cf7b79ac81008c73eb2"
+    },
+    "_createdAt": {
+      "$date": "2020-06-26T00:13:52.223Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5ef53dcc3570080fd83f2f3e"
+    },
+    "_class": "stock",
+    "_creator": {
+      "$oid": "5ebcbee6697a6c1b106d3fbe"
+    },
+    "shares": 100,
+    "company": {
+      "$oid": "5ef29d79b79ac81008c73eba"
+    },
+    "owner": {
+      "$oid": "5ef29cf7b79ac81008c73eb2"
+    },
+    "_createdAt": {
+      "$date": "2020-06-26T00:14:04.481Z"
+    }
+  }
+]

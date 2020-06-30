@@ -1,0 +1,38 @@
+
+<div class="page" data-page="main" data-handler="MainPage">
+
+    <div class="page-head">
+        <ol class="breadcrumb">
+            <li data-t="">Main</li>
+        </ol>
+        <%- include('./_account') %>
+    </div>
+
+    <h1 data-t="">Companies</h1>
+
+    <div class="company-list loadable-container" data-handler="CompanyList">
+
+        <div class="loadable-content"></div>
+        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+
+        <template data-id="list">
+            <div class="row">{{items}}</div>
+        </template>
+
+        <template data-id="item">
+            <div class="col-sm-6 col-lg-3">
+                <div class="company-card" data-id="{{_id}}">
+                    <a href="#" data-action="company">
+                        <img data-src="<%- _url('/api/base/file/download') %>?v=.logo&id={{logo}}"
+                             class="thumbnail img-responsive" alt="{{name}}">
+                    </a>
+                    <h3><a href="#" data-action="company" data-t="meta.class.company">{{name}}</a></h3>
+                </div>
+            </div>
+        </template>
+
+        <template data-id="error">
+            <div class="alert-danger alert">{{text}}</div>
+        </template>
+    </div>
+</div>

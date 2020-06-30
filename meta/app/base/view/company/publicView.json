@@ -1,0 +1,25 @@
+{
+  "description": "Public view",
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "description",
+      "orderNumber": 20
+    },
+    {
+      "name": "logo",
+      "orderNumber": 30
+    },
+    {
+      "name": "shares",
+      "orderNumber": 40
+    },
+    {
+      "name": "stocked",
+      "orderNumber": 50
+    }
+  ]
+}

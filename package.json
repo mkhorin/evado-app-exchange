@@ -1,0 +1,29 @@
+{
+  "name": "evado-app-exchange",
+  "version": "1.0.1",
+  "description": "Exchange App built on Evado Platform",
+  "author": "Maxim Khorin",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.16.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkhorin/evado-app-exchange.git"
+  },
+  "dependencies": {
+    "evado": "~1.5.0",
+    "evado-api-base": "~1.5.0",
+    "evado-api-navigation": "~1.5.0",
+    "evado-meta-base": "~1.5.0",
+    "evado-meta-navigation": "~1.5.0",
+    "evado-module-account": "~1.5.0",
+    "evado-module-admin": "~1.5.0",
+    "evado-module-office": "~1.5.0",
+    "evado-module-studio": "~1.5.0",
+    "sharp": "0.24.1"
+  },
+  "scripts": {
+    "start": "node console/start"
+  }
+}

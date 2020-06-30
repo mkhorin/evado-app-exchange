@@ -1,0 +1,60 @@
+
+<div class="lot-list loadable-container" data-handler="StockLotList" data-stock="{{_id}}">
+
+    <div class="loadable-content"></div>
+    <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+
+    <template data-id="list">
+        <div class="lot-tools">
+            <div class="lot-filter btn-group">
+                <button type="button" class="btn btn-default" data-filter="all">
+                    <span data-t="">All</span>
+                </button>
+                <button type="button" class="btn btn-default" data-filter="sale">
+                    <span data-t="">Sale</span>
+                </button>
+                <button type="button" class="btn btn-default" data-filter="purchase">
+                    <span data-t="">Purchase</span>
+                </button>
+            </div>
+        </div>
+        <div class="lot-items">##items##</div>
+    </template>
+
+    <template data-id="item">
+        <div class="lot-item row-item" data-id="##_id##">
+            <div class="lot-item-id cell">
+                <div class="value">
+                    <a href="#" data-action="myLot">##_id##</a>
+                </div>
+            </div>
+            <div class="lot-item-type cell">
+                <div class="value" data-t="meta.class.lot">##type##</div>
+            </div>
+            <div class="lot-item-shares cell">
+                <label data-t="">Shares</label>
+                <div class="value">##shares##</div>
+            </div>
+            <div class="lot-item-value cell">
+                <label data-t="">Value</label>
+                <div class="value">##value##</div>
+            </div>
+            <div class="lot-item-state cell">
+                <label data-t="">State</label>
+                <div class="value" data-t="meta.class.lot">##state##</div>
+            </div>
+        </div>
+    </template>
+
+    <%- include('./_pagination', {start: '##', end: '##'}) %>
+
+    <template data-id="empty">
+        <div class="alert-warning alert">
+            <span data-t="">No stock lots</span>
+        </div>
+    </template>
+
+    <template data-id="error">
+        <div class="alert-danger alert">##text##</div>
+    </template>
+</div>

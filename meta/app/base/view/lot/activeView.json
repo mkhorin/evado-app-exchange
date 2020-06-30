@@ -1,0 +1,33 @@
+{
+  "description": "Active lots",
+  "filter": {
+    "_state": "active"
+  },
+  "order": {
+    "$key": -1
+  },
+  "attrs": [
+    {
+      "name": "type",
+      "orderNumber": 20
+    },
+    {
+      "name": "company",
+      "eagerLoading": true,
+      "orderNumber": 30
+    },
+    {
+      "name": "shares",
+      "orderNumber": 40
+    },
+    {
+      "name": "value",
+      "orderNumber": 50
+    },
+    {
+      "name": "owner",
+      "eagerLoading": true,
+      "orderNumber": 60
+    }
+  ]
+}
