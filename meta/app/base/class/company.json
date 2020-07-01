@@ -39,11 +39,7 @@
       "required": false,
       "selectSearchable": false,
       "trim": true,
-      "unique": false,
-      "header": [
-        "+++",
-        ".$self"
-      ]
+      "unique": false
     },
     {
       "name": "logo",
