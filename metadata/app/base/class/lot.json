@@ -161,6 +161,7 @@
         "edit"
       ],
       "commonSearchable": false,
+      "defaultValue": "$user.meta.base.trader",
       "eagerLoading": false,
       "eagerView": "publicView",
       "escape": true,
@@ -176,16 +177,7 @@
       "required": true,
       "selectSearchable": false,
       "trim": true,
-      "unique": false,
-      "defaultValue": [
-        "$query",
-        "id",
-        "trader",
-        {},
-        {
-          "user": "$user"
-        }
-      ]
+      "unique": false
     },
     {
       "name": "getter",

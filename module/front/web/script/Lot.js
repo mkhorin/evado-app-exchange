@@ -422,8 +422,7 @@ Front.CompanyLotList = class CompanyLotList extends Front.LotList {
     }
 
     getPostData () {
-        const data = super.getPostData();
-        return Object.assign(data, {
+        return Object.assign(super.getPostData(), {
             master: {
                 id: this.company,
                 class: 'company',
@@ -463,9 +462,8 @@ Front.StockLotList = class StockLotList extends Front.LotList {
     }
 
     getPostData () {
-        const data = super.getPostData();
-        data.view = 'stockLots';
-        return Object.assign(data, {
+        return Object.assign(super.getPostData(), {
+            view: 'stockLots',
             master: {
                 id: this.stock,
                 class: 'stock',

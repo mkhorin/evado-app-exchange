@@ -1,0 +1,19 @@
+{
+  "description": "Default edit",
+  "attrs": [
+    {
+      "name": "user",
+      "orderNumber": 10,
+      "readOnly": true
+    },
+    {
+      "name": "money",
+      "orderNumber": 20
+    },
+    {
+      "name": "stocks",
+      "eagerView": null,
+      "orderNumber": 30
+    }
+  ]
+}

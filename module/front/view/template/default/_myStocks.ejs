@@ -14,9 +14,6 @@
 
     <div class="loadable-container" data-handler="MyStockList">
 
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
-
         <template data-id="list">
             <div class="stock-items">{{items}}</div>
         </template>
@@ -50,5 +47,8 @@
         <template data-id="error">
             <div class="alert-danger alert">{{text}}</div>
         </template>
+
+        <div class="loadable-content"></div>
+        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
     </div>
 </div>

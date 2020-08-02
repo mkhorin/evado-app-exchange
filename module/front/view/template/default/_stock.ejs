@@ -3,9 +3,6 @@
 
     <div class="company loadable-container" data-handler="Stock">
 
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
-
         <template data-id="stock">
             <div class="page-head">
                 <ol class="breadcrumb">
@@ -20,7 +17,7 @@
 
             <div class="row">
                 <div class="col-sm-2 hidden-xs">
-                    <img data-src="<%- _url('/api/base/file/download') %>?v=.logo&id={{logo}}"
+                    <img data-src="<%- _url('/api/base/file/download') %>?c=logo&id={{logo}}"
                          class="thumbnail transparent img-responsive" alt="{{name}}">
                 </div>
                 <div class="col-sm-10">
@@ -45,5 +42,7 @@
             <div class="alert-danger alert">{{text}}</div>
         </template>
 
+        <div class="loadable-content"></div>
+        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
     </div>
 </div>

@@ -1,0 +1,32 @@
+{
+  "label": "User lots",
+  "filter": {
+    "_creator": "$user"
+  },
+  "order": {
+    "$key": -1
+  },
+  "attrs": [
+    {
+      "name": "_state",
+      "orderNumber": 10
+    },
+    {
+      "name": "type",
+      "orderNumber": 20
+    },
+    {
+      "name": "company",
+      "eagerLoading": true,
+      "orderNumber": 30
+    },
+    {
+      "name": "shares",
+      "orderNumber": 40
+    },
+    {
+      "name": "value",
+      "orderNumber": 50
+    }
+  ]
+}

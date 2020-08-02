@@ -31,7 +31,7 @@ Jam.Utility.ChangeMoney = class ChangeMoneyUtility extends Jam.Utility {
             model: this.getModel().id,
             money: this.getMoney()
         });
-        Jam.Helper.post(this.$item, this.getUrl(), data)
+        Jam.Helper.post(this.getUrl(), data)
             .done(this.onDone.bind(this))
             .fail(this.onFail.bind(this));
     }

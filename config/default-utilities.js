@@ -11,7 +11,8 @@ module.exports = {
         enabled: true,
         name: 'Change amount of money',
         frontClass: 'ChangeMoney',
-        targetClass: 'trader'
+        targetClass: 'trader',
+        actions: ['update']
     },
     'deal': {
         Class: 'component/meta/utility/DealUtility',

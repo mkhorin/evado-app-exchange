@@ -9,8 +9,6 @@
             <div class="modal-body">
                 <div class="modal-error alert-danger alert hidden"></div>
                 <div class="loadable-container" data-handler="MyLot">
-                    <div class="loadable-content"></div>
-                    <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
 
                     <template data-id="read">
                         <div class="form-horizontal form">
@@ -121,6 +119,9 @@
                     <template data-id="error">
                         <div class="alert-danger alert">{{text}}</div>
                     </template>
+
+                    <div class="loadable-content"></div>
+                    <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
                 </div>
             </div>
             <div class="modal-footer">

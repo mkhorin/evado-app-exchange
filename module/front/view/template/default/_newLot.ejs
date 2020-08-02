@@ -10,9 +10,6 @@
                 <div class="modal-error alert-danger alert hidden"></div>
                 <div class="loadable-container" data-handler="NewLot">
 
-                    <div class="loadable-content"></div>
-                    <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
-
                     <template data-id="lot">
                         <div class="form-horizontal form" data-handler="Form">
                             <div class="form-attr form-group required">
@@ -55,6 +52,9 @@
                     <template data-id="error">
                         <div class="alert-danger alert">{{text}}</div>
                     </template>
+
+                    <div class="loadable-content"></div>
+                    <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
                 </div>
             </div>
             <div class="modal-footer">

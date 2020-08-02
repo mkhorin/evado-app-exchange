@@ -1,0 +1,160 @@
+{
+  "abstract": false,
+  "header": ".name",
+  "label": "Company",
+  "attrs": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "string",
+      "commonSearchable": true,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": true,
+      "trim": true,
+      "unique": true
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "text",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "logo",
+      "label": "Logo",
+      "type": "ref",
+      "commands": [
+        "add",
+        "remove",
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "null",
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "logo",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "shares",
+      "label": "Shares",
+      "type": "integer",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 40,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "number",
+          "orderNumber": 10,
+          "integerOnly": true,
+          "max": 10000,
+          "min": 1
+        }
+      ]
+    },
+    {
+      "name": "stocked",
+      "label": "Stocked",
+      "type": "calc",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": false,
+      "expression": [
+        "$+",
+        0,
+        [
+          "$query",
+          "column",
+          "stock",
+          {
+            "key": "shares"
+          },
+          {
+            "company": ".$key"
+          }
+        ]
+      ],
+      "hidden": false,
+      "hint": "Shares held by traders",
+      "history": false,
+      "multiple": false,
+      "orderNumber": 50,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": false,
+      "unique": false
+    },
+    {
+      "name": "activeLots",
+      "label": "Active lots",
+      "type": "backref",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "listView": "activeCompanyLots",
+      "multiple": true,
+      "orderNumber": 60,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "company",
+      "refClass": "lot",
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ]
+}

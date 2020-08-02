@@ -42,6 +42,7 @@
       "label": "Shares",
       "type": "integer",
       "commonSearchable": false,
+      "defaultValue": 0,
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
@@ -55,7 +56,6 @@
       "selectSearchable": false,
       "trim": true,
       "unique": false,
-      "defaultValue": 0,
       "rules": [
         {
           "type": "number",
@@ -109,6 +109,9 @@
       "commonSearchable": false,
       "eagerLoading": false,
       "escape": true,
+      "filter": {
+        "Class": "component/meta/filter/StockLotsFilter"
+      },
       "hidden": false,
       "history": false,
       "linkAttr": "owner",
@@ -123,10 +126,7 @@
       "required": false,
       "selectSearchable": false,
       "trim": true,
-      "unique": false,
-      "filter": {
-        "Class": "component/meta/filter/StockLotsFilter"
-      }
+      "unique": false
     }
   ]
 }

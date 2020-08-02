@@ -1,0 +1,16 @@
+{
+  "description": "User traders",
+  "filter": {
+    "user": "$user"
+  },
+  "attrs": [
+    {
+      "name": "user",
+      "orderNumber": 10
+    },
+    {
+      "name": "money",
+      "orderNumber": 20
+    }
+  ]
+}

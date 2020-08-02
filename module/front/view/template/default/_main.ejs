@@ -12,9 +12,6 @@
 
     <div class="company-list loadable-container" data-handler="CompanyList">
 
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
-
         <template data-id="list">
             <div class="row">{{items}}</div>
         </template>
@@ -23,7 +20,7 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="company-card" data-id="{{_id}}">
                     <a href="#" data-action="company">
-                        <img data-src="<%- _url('/api/base/file/download') %>?v=.logo&id={{logo}}"
+                        <img data-src="<%- _url('/api/base/file/download') %>?c=logo&id={{logo}}"
                              class="thumbnail img-responsive" alt="{{name}}">
                     </a>
                     <h3><a href="#" data-action="company" data-t="meta.class.company">{{name}}</a></h3>
@@ -34,5 +31,8 @@
         <template data-id="error">
             <div class="alert-danger alert">{{text}}</div>
         </template>
+
+        <div class="loadable-content"></div>
+        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
     </div>
 </div>

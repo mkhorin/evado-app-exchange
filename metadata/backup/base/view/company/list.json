@@ -1,0 +1,18 @@
+{
+  "description": "Default list",
+  "attrs": [
+    {
+      "name": "logo",
+      "orderNumber": 10,
+      "viewType": "thumbnail"
+    },
+    {
+      "name": "name",
+      "orderNumber": 20
+    },
+    {
+      "name": "shares",
+      "orderNumber": 30
+    }
+  ]
+}

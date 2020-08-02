@@ -8,7 +8,7 @@ const Base = require('evado/component/utility/MetaUtility');
 module.exports = class DealUtility extends Base {
 
     async isActive () {
-        if (!this.enabled || !this.isUpdateAction() || !await this.canAccess()) {
+        if (!this.enabled || !this.isUpdateAction()) {
             return false;
         }
         const {model} = await this.resolveMetaParams();
@@ -137,4 +137,4 @@ module.exports = class DealUtility extends Base {
     }
 };
 
-const BadRequest = require('areto/error/BadRequestHttpException');
+const BadRequest = require('areto/error/http/BadRequest');

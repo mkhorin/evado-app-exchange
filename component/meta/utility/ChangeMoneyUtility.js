@@ -7,14 +7,6 @@ const Base = require('evado/component/utility/MetaUtility');
 
 module.exports = class ChangeMoneyUtility extends Base {
 
-    async isActive () {
-        const params = await this.resolveMetaParams();
-        return this.enabled
-            && params.class.name === this.targetClass
-            && this.isUpdateAction()
-            && this.canAccess();
-    }
-
     async execute () {
         const params = await this.resolveMetaParams();
         const trader = params.model;
@@ -34,4 +26,4 @@ module.exports = class ChangeMoneyUtility extends Base {
     }
 };
 
-const BadRequest = require('areto/error/BadRequestHttpException');
+const BadRequest = require('areto/error/http/BadRequest');
