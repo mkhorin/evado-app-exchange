@@ -36,7 +36,7 @@ module.exports = {
             type: 'class',
             class: 'trader'
         },
-        rule: 'User'
+        rule: 'user'
     }, {
         description: 'Trader can read his own stocks',
         roles: 'trader',
@@ -46,7 +46,7 @@ module.exports = {
             type: 'class',
             class: 'stock'
         },
-        rule: 'Owner user'
+        rule: 'owner'
     }, {
         description: 'Trader can manage his own lots',
         roles: 'trader',
@@ -56,7 +56,7 @@ module.exports = {
             type: 'class',
             class: 'lot'
         },
-        rule: 'Owner user'
+        rule: 'owner'
     }, {
         description: 'Trader can read received lots',
         roles: 'trader',
@@ -66,7 +66,7 @@ module.exports = {
             type: 'class',
             class: 'lot'
         },
-        rule: 'Getter user'
+        rule: 'getter'
     }, {
         description: 'Trader can read any active lots',
         roles: 'trader',
@@ -94,6 +94,9 @@ module.exports = {
             label: 'Studio module',
             description: 'Access to Studio module'
         },
+        'moduleApiBaseUpload': {
+            label: 'Upload files'
+        },
         'utilityChangeMoney': {
             label: 'Change money utility',
             description: 'Access to change user`s cash balance'
@@ -112,7 +115,7 @@ module.exports = {
                 'moduleAdmin',
                 'moduleOffice',
                 'moduleStudio',
-                'upload',
+                'moduleApiBaseUpload',
                 'utilityChangeMoney'
             ]
         },
@@ -125,8 +128,36 @@ module.exports = {
             description: 'Seller and buyer of lots',
             children: [
                 'moduleOffice',
+                'moduleApiBaseUpload',
                 'utilityDeal'
             ]
+        }
+    },
+
+    rules: {
+        'getter': {
+            label: 'Getter user',
+            description: 'Check user is a trader-getter',
+            config: {
+                Class: 'evado/component/meta/rbac/rule/RefUserRule',
+                attr: 'getter'
+            }
+        },
+        'owner': {
+            label: 'Owner user',
+            description: 'Check user is a trader-owner',
+            config: {
+                Class: 'evado/component/meta/rbac/rule/RefUserRule',
+                attr: 'owner'
+            }
+        },
+        'user': {
+            label: 'User',
+            description: 'Check user binding',
+            config: {
+                Class: 'evado/component/meta/rbac/rule/UserRule',
+                attr: 'user'
+            }
         }
     },
 
@@ -135,20 +166,5 @@ module.exports = {
         'Bart': 'trader',
         'Sara': 'trader',
         'Tim': 'trader'
-    },
-
-    rules: {
-        'Getter user': {
-            description: 'Check user is a trader-getter',
-            config: '{"Class": "evado/component/meta/rbac/rule/RefUserRule", "attr": "getter"}'
-        },
-        'Owner user': {
-            description: 'Check user is a trader-owner',
-            config: '{"Class": "evado/component/meta/rbac/rule/RefUserRule", "attr": "owner"}'
-        },
-        'User': {
-            description: 'Check user binding',
-            config: '{"Class": "evado/component/meta/rbac/rule/UserRule"}'
-        }
     }
 };

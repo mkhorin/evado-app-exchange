@@ -27,7 +27,7 @@ module.exports = class StockUsersRule extends Base {
         return this.isAllowType() ? matched : !matched;
     }
 
-    async getObjectFilter () {
+    async getObjectFilter () { // filter objects in list
         const trader = await this.resolveRefUser();
         return this.objectFilter ? ['OR', {owner: trader}, {getter: trader}] : null;
     }

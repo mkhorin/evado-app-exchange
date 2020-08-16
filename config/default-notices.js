@@ -11,7 +11,7 @@ module.exports = {
     'dealDone': {
         active: true,
         subject: 'Deal done: {type}',
-        text: '{type}}: {company}: Shares: {shares}: Value: {value}',
+        text: '{type}: {company}. Shares: {shares}. Value: {value}',
         methods: ['popup']
     },
 };
