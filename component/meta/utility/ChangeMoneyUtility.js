@@ -17,7 +17,7 @@ module.exports = class ChangeMoneyUtility extends Base {
         trader.set('money', trader.get('money') + amount);
         await trader.update();
         const recipient = trader.get('user');
-        await this.createNotification('balanceChanged', {amount, recipient});
+        await this.module.createNotification('balanceChanged', recipient, {amount});
         this.controller.sendText('Balance has been changed');
     }
 

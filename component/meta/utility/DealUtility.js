@@ -21,26 +21,26 @@ module.exports = class DealUtility extends Base {
 
     async execute () {
         const data = await this.resolveMetaParams();
-        const getter = await data.class.meta.getClass('trader').find().and({user: this.getUserId()}).one();
+        const getter = await data.class.meta.getClass('trader').find({user: this.getUserId()}).one();
         if (!getter) {
             throw new BadRequest('Trader not found');
         }
         const lot = data.model;
         const method = lot.get('type') === 'sale' ? 'buy' : 'sell';
         await this[method](lot, getter);
-        await this.sendNotification(lot);
+        await this.createLotNotification(lot);
         this.controller.sendText('Deal done');
     }
 
-    async sendNotification (lot) {
+    async createLotNotification (lot) {
         const company = await lot.related.resolve('company');
         const owner = await lot.related.resolve('owner');
-        return this.createNotification('dealDone', {
+        const recipient = owner.get('user');
+        return this.module.createNotification('dealDone', recipient, {
             company: company.header.resolve(),
             type: lot.getDisplayValue('type'),
             shares: lot.get('shares'),
-            value: lot.get('value'),
-            recipient: owner.get('user')
+            value: lot.get('value')
         });
     }
 
@@ -123,7 +123,7 @@ module.exports = class DealUtility extends Base {
 
     async getStock (company, trader) {
         const owner = trader.getId();
-        return trader.class.meta.getClass('stock').find().and({company, owner}).one();
+        return trader.class.meta.getClass('stock').find({company, owner}).one();
     }
 
     async createStock (company, trader) {

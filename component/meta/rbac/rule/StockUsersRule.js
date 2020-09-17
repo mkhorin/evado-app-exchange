@@ -35,7 +35,7 @@ module.exports = class StockUsersRule extends Base {
     async resolveRefUser () {
         if (!this._refUser) {
             const metaClass = this.getTarget().class.getAttr('owner').getRefClass();
-            this._refUser = await metaClass.find().and({user: this.getUserId()}).id();
+            this._refUser = await metaClass.find({user: this.getUserId()}).id();
         }
         return this._refUser;
     }

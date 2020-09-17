@@ -15,12 +15,11 @@ module.exports = class LotSharesValidator extends Base {
         const meta = model.class.meta;
         const company = model.get('company');
         const owner = model.get('owner');
-        const stock = await meta.getClass('stock').find().and({company, owner}).one();
+        const stock = await meta.getClass('stock').find({company, owner}).one();
         if (!stock) {
             return model.addError(name, 'Trader stock not found');
         }
-        const saleShares = await model.class.find()
-            .and({company, owner, type})
+        const saleShares = await model.class.find({company, owner, type})
             .and(['!=', '_state', 'closed'])
             .and(model.getNotIdCondition())
             .column('shares');
