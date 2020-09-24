@@ -1,9 +1,7 @@
-# Evado Exchange App
+# Evado Exchange
 
-Buying and selling stocks by traders.
-
-- [Evado Declarative Framework](https://github.com/mkhorin/evado)
-- [Step-by-step tutorial](http://nervebit.com)
+Built on [Evado Declarative Framework](https://github.com/mkhorin/evado)
+this application provides traders to buy and sell stocks.
 
 ## Docker installation
 
@@ -62,4 +60,4 @@ Password: 123456
 ```
 
 ## Tutorial
-- [Build App Without Coding](http://nervebit.com)
+- [Build an App Without Coding](http://nervebit.com)
