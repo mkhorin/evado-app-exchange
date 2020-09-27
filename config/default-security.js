@@ -143,7 +143,7 @@ module.exports = {
             description: 'Check user is a trader-getter',
             config: {
                 Class: 'evado/component/meta/rbac/rule/RefUserRule',
-                attr: 'getter'
+                refAttr: 'getter'
             }
         },
         'owner': {
@@ -151,15 +151,14 @@ module.exports = {
             description: 'Check user is a trader-owner',
             config: {
                 Class: 'evado/component/meta/rbac/rule/RefUserRule',
-                attr: 'owner'
+                refAttr: 'owner'
             }
         },
         'user': {
             label: 'User',
             description: 'Check user binding',
             config: {
-                Class: 'evado/component/meta/rbac/rule/UserRule',
-                attr: 'user'
+                Class: 'evado/component/meta/rbac/rule/UserRule'
             }
         }
     },
