@@ -1,7 +1,7 @@
 # Evado Exchange
 
-Built on [Evado Declarative Framework](https://github.com/mkhorin/evado)
-this application provides traders to buy and sell stocks.
+An application built on [Evado Declarative Framework](https://github.com/mkhorin/evado)
+provides traders to buy and sell stocks.
 
 ## Docker installation
 
