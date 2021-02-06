@@ -1,13 +1,9 @@
-:root {
-    --back-light: #f8f8f6;
-    --color-danger: #a94442;
-    --color-gray: #aaa;
-    --color-primary: #3c8dbc;
+body {
+    --back-light: #fafaf8;
+    --navbar-color: var(--light-warning);
+    --super-navbar-color: var(--dark-warning);
+    --sidebar-width: 0;
 }
-legend {
-    font-size: 15px;
-}
-
 .front-wrapper {
     background: none !important;
 }
@@ -42,13 +38,6 @@ legend {
 .block-title {
     margin: 5px 0 20px;
 }
-.signboard {
-    padding: 20px;
-    margin-top: 20px;
-    color: #884;
-    background: #ffe;
-    border-bottom: 2px solid #cca;
-}
 
 /* LOADABLE */
 
@@ -74,7 +63,6 @@ legend {
 
 .page {
     display: none;
-    padding: 20px 0 30px;
 }
 .page.active {
     display: block;
@@ -92,19 +80,14 @@ legend {
 .page .icon-title h1 {
     margin: 25px 0 10px;
 }
-.page .icon-title .thumbnail {
-    margin-right: 30px;
+.page .icon-title .img-thumbnail {
+    margin: 0 2rem 1rem 0;
 }
 
 /* BREADCRUMB */
 
 .breadcrumb {
-    padding-right: 145px;
-    border-left: 2px solid #3c8dbc;
-    border-radius: 0;
-}
-.breadcrumb + h1 {
-    margin-top: 30px;
+    background: #eff;
 }
 
 /* ACCOUNT */
@@ -121,12 +104,12 @@ legend {
 .lot-toggle {
     cursor: pointer;
     color: #666;
-    line-height: 36px;
+    line-height: 42px;
     border-left: 1px solid #ddd;
 }
 .lot-toggle:hover,
 .user-toggle:hover {
-    color: var(--color-primary);
+    color: var(--primary);
 }
 .lot-toggle,
 .money-block,
@@ -195,22 +178,25 @@ legend {
     padding: 15px;
     background: #fff;
     overflow: auto;
-    border-bottom: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--primary);
     text-align: center;
     max-width: 320px;
 }
-.company-card .thumbnail {
+.company-card .img-thumbnail {
     margin: 0 auto;
     max-width: 70%;
     min-height: 120px;
     border: none;
+}
+.company-card a + h3 {
+    margin: 1rem 0 0;
 }
 .company-card h3 a {
     display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 .company-shares {
     margin-top: 20px;

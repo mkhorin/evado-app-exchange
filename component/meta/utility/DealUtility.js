@@ -21,22 +21,24 @@ module.exports = class DealUtility extends Base {
 
     async execute () {
         const data = await this.resolveMetaParams();
-        const getter = await data.class.meta.getClass('trader').find({user: this.getUserId()}).one();
+        const getter = await data.class.meta.getClass('trader').find({
+            user: this.getUserId()
+        }).one();
         if (!getter) {
             throw new BadRequest('Trader not found');
         }
         const lot = data.model;
         const method = lot.get('type') === 'sale' ? 'buy' : 'sell';
         await this[method](lot, getter);
-        await this.createLotNotification(lot);
+        await this.notifyAboutDeal(lot);
         this.controller.sendText('Deal done');
     }
 
-    async createLotNotification (lot) {
+    async notifyAboutDeal (lot) {
         const company = await lot.related.resolve('company');
         const owner = await lot.related.resolve('owner');
         const recipient = owner.get('user');
-        return this.module.createNotification('dealDone', recipient, {
+        return this.module.notify('dealDone', recipient, {
             company: company.header.resolve(),
             type: lot.getDisplayValue('type'),
             shares: lot.get('shares'),
@@ -44,9 +46,10 @@ module.exports = class DealUtility extends Base {
         });
     }
 
-    // move shares from owner to getter
-    // move money from getter to owner
-
+    /**
+     * Mve shares from owner to getter
+     * Move money from getter to owner
+     */
     async buy (lot, getter) {
         const getterMoney = getter.get('money');
         const lotValue = lot.get('value');
@@ -72,7 +75,6 @@ module.exports = class DealUtility extends Base {
         lot.set('getter', getter.getId());
         lot.set('dealDate', new Date);
         lot.setState('closed');
-
         await owner.update();
         await getter.update();
         await ownerStock.update();
@@ -80,9 +82,10 @@ module.exports = class DealUtility extends Base {
         await lot.update();
     }
 
-    // move shares from getter to owner
-    // move money from owner to getter
-
+    /**
+     * Move shares from getter to owner
+     * Move money from owner to getter
+     */
     async sell (lot, getter) {
         const owner = await lot.related.resolve('owner');
         const ownerMoney = owner.get('money');
@@ -108,7 +111,6 @@ module.exports = class DealUtility extends Base {
         lot.set('getter', getter.getId());
         lot.set('dealDate', new Date);
         lot.setState('closed');
-
         await owner.update();
         await getter.update();
         await ownerStock.update();

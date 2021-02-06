@@ -1,12 +1,12 @@
 'use strict';
-
-// evado/web/jam/utility/I18n.js
-
-// extend default translation category
-// use: <span data-t="">Some text</span>
-// use: <div title="Some text"></div>
-// use: <input placeholder="Some text" type="text" />
-
+/**
+ * Extend default translations
+ *
+ * Use: Jam.t('Some text')
+ * Use: <span data-t="">Some text</span>
+ * Use: <div title="Some text" data-t=""></div>
+ * Use: <input placeholder="Some text" type="text" data-t="">
+ */
 Object.assign(Jam.I18n.defaults, {
 
     'Administrator': 'Администратор',

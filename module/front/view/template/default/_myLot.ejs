@@ -2,114 +2,115 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                <h5 class="modal-title" data-t="">My lot</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" data-t="">My lot</h4>
             </div>
             <div class="modal-body">
                 <div class="modal-error alert-danger alert hidden"></div>
                 <div class="loadable-container" data-handler="MyLot">
 
                     <template data-id="read">
-                        <div class="form-horizontal form">
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label">ID</label>
+                        <div class="form">
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label">ID</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{_id}}</div>
+                                    <div class="form-control-plaintext">{{_id}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">State</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">State</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static" data-t="meta.class.lot">{{state}}</div>
+                                    <div class="form-control-plaintext" data-t="meta.class.lot">{{state}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Type</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Type</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static" data-t="meta.class.lot">{{type}}</div>
+                                    <div class="form-control-plaintext" data-t="meta.class.lot">{{type}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Company</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Company</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{company}}</div>
+                                    <div class="form-control-plaintext">{{company}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Shares</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Shares</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{shares}}</div>
+                                    <div class="form-control-plaintext">{{shares}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Value</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Value</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{value}}</div>
+                                    <div class="form-control-plaintext">{{value}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Owner</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Owner</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{owner}}</div>
+                                    <div class="form-control-plaintext">{{owner}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Getter</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Getter</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{getter}}</div>
+                                    <div class="form-control-plaintext">{{getter}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Deal date</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Deal date</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{dealDate}}</div>
+                                    <div class="form-control-plaintext">{{dealDate}}</div>
                                 </div>
                             </div>
                         </div>
                     </template>
 
                     <template data-id="edit">
-                        <div class="form-horizontal form" data-handler="Form">
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label">ID</label>
+                        <div class="form" data-handler="Form">
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label">ID</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{_id}}</div>
+                                    <div class="form-control-plaintext">{{_id}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">State</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">State</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{state}}</div>
+                                    <div class="form-control-plaintext">{{state}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group required">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Type</label>
+                            <div class="form-attr form-group row required">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Type</label>
                                 <div class="col-md-9">
-                                    <select name="type" class="form-control">
+                                    <select name="type" class="form-control" required>
                                         <option value="sale" data-t="meta.class.lot">Sale</option>
                                         <option value="purchase" data-t="meta.class.lot">Purchase</option>
                                     </select>
                                     <div class="error-block"></div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Company</label>
+                            <div class="form-attr form-group row">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Company</label>
                                 <div class="col-md-9">
-                                    <div class="form-control-static">{{company}}</div>
+                                    <div class="form-control-plaintext">{{company}}</div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group required">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Shares</label>
+                            <div class="form-attr form-group row required">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Shares</label>
                                 <div class="col-md-9">
-                                    <input type="text" name="shares" class="form-control" value="{{shares}}">
+                                    <input type="text" name="shares" class="form-control" value="{{shares}}" required>
                                     <div class="error-block"></div>
                                 </div>
                             </div>
-                            <div class="form-attr form-group required">
-                                <label class="col-md-3 control-label" data-t="meta.class.lot">Value</label>
+                            <div class="form-attr form-group row required">
+                                <label class="col-md-3 col-form-label" data-t="meta.class.lot">Value</label>
                                 <div class="col-md-9">
-                                    <input type="text" name="value" class="form-control" value="{{value}}">
+                                    <input type="text" name="value" class="form-control" value="{{value}}" required>
                                     <div class="error-block"></div>
                                 </div>
                             </div>
@@ -137,7 +138,7 @@
                 <button class="btn-danger btn" data-command="delete">
                     <span data-t="">Delete</span>
                 </button>
-                <button class="btn-default btn" data-dismiss="modal">
+                <button class="btn-outline-secondary btn" data-dismiss="modal">
                     <span data-t="">Close</span>
                 </button>
             </div>

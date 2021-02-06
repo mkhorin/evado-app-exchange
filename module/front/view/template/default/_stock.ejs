@@ -6,9 +6,9 @@
         <template data-id="stock">
             <div class="page-head">
                 <ol class="breadcrumb">
-                    <li><a href="#" data-action="main" data-t="">Main</a></li>
-                    <li><a href="#" data-action="myStocks" data-t="">Stocks</a></li>
-                    <li data-t="">Stock</li>
+                    <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
+                    <li class="breadcrumb-item"><a href="#" data-action="myStocks" data-t="">Stocks</a></li>
+                    <li class="breadcrumb-item" data-t="">Stock</li>
                 </ol>
                 <%- include('./_account') %>
             </div>
@@ -16,23 +16,23 @@
             <h1>#{{_id}}</h1>
 
             <div class="row">
-                <div class="col-sm-2 hidden-xs">
+                <div class="col-md-2 hidden-xs">
                     <img data-src="<%- _url('/api/base/file/download') %>?c=logo&id={{logo}}"
-                         class="thumbnail transparent img-responsive" alt="{{name}}">
+                         class="thumbnail-transparent img-thumbnail img-fluid" alt="{{name}}">
                 </div>
-                <div class="col-sm-10">
+                <div class="col-md-10">
                     <p>
-                        <span class="mr10" data-t="">Company:</span>
+                        <span class="mr-1" data-t="">Company:</span>
                         <a href="#" data-action="company" data-id="{{companyId}}">{{company}}</a>
                     </p>
                     <p>
-                        <span class="mr10" data-t="">My shares:</span>
+                        <span class="mr-1" data-t="">My shares:</span>
                         <b>{{shares}}</b>
                     </p>
                 </div>
             </div>
 
-            <div class="block mt10">
+            <div class="block mt-3">
                 <h3 class="block-title" data-t="">Stock lots</h3>
                 <%- include('./_stockLots') %>
             </div>

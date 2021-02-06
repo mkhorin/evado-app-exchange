@@ -6,26 +6,28 @@
 Jam.Utility.Deal = class DealUtility extends Jam.Utility {
 
     onItem (event) {
-        this.checkModelChanged()
+        this.checkModelChanges()
             ? event.preventDefault()
             : super.onItem(event);
     }
 
     execute () {
         const data = this.getRequestData();
-        Jam.toggleGlobalLoader(true);
-        Jam.Helper.post(this.getUrl(), data)
+        Jam.toggleLoader(true);
+        return Jam.post(this.getUrl(), data)
             .done(this.onDone.bind(this))
             .fail(this.onFail.bind(this));
     }
 
     onDone (data) {
-        Jam.toggleGlobalLoader(false);
-        this.modal.reload({saved: true}).done(() => this.getModel().notice.success(data));
+        Jam.toggleLoader(false);
+        return this.frame.reload({saved: true}).done(() => {
+            this.getModel().alert.success(data);
+        });
     }
 
     onFail (data) {
-        Jam.toggleGlobalLoader(false);
+        Jam.toggleLoader(false);
         this.parseModelError(data);
     }
 };

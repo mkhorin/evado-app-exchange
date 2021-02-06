@@ -1,6 +1,6 @@
 'use strict';
 
-Front.Company = class Company extends Front.LoadableContent {
+Front.Company = class Company extends Front.Loadable {
 
     getUrl () {
         return super.getUrl('read');
@@ -37,7 +37,7 @@ Front.Company = class Company extends Front.LoadableContent {
     }
 };
 
-Front.CompanyList = class CompanyList extends Front.LoadableContent {
+Front.CompanyList = class CompanyList extends Front.Loadable {
 
     init () {
         super.init();
@@ -56,12 +56,12 @@ Front.CompanyList = class CompanyList extends Front.LoadableContent {
     }
 
     render (data) {
-        let items = data && data.items;
+        let items = data?.items;
         items = Array.isArray(items) ? items : [];
         items = items.map(this.renderItem, this).join('');
         return items
             ? this.resolveTemplate('list', {items})
-            : this.resolveTemplate('error', {text: Jam.i18n.translate('No companies found')});
+            : this.resolveTemplate('error', {text: Jam.t('No companies found')});
     }
 
     renderItem (data) {

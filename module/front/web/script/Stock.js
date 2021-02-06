@@ -1,6 +1,6 @@
 'use strict';
 
-Front.Stock = class Stock extends Front.LoadableContent {
+Front.Stock = class Stock extends Front.Loadable {
 
     init () {
         super.init();
@@ -33,7 +33,7 @@ Front.Stock = class Stock extends Front.LoadableContent {
     }
 };
 
-Front.StockList = class StockList extends Front.LoadableContent {
+Front.StockList = class StockList extends Front.Loadable {
 
     getUrl (action = 'list') {
         return super.getUrl(action);
@@ -47,7 +47,7 @@ Front.StockList = class StockList extends Front.LoadableContent {
     }
 
     render (data) {
-        let items = data && data.items;
+        let items = data?.items;
         items = Array.isArray(items) ? items : [];
         items = items.map(this.renderItem, this).join('') || this.resolveTemplate('empty');
         return this.resolveTemplate('list', {items});

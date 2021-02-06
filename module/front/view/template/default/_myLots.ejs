@@ -3,9 +3,9 @@
 
     <div class="page-head">
         <ol class="breadcrumb">
-            <li><a href="#" data-action="main" data-t="">Main</a></li>
-            <li><a href="#" data-action="myStocks" data-t="">Stocks</a></li>
-            <li data-t="">Lots</li>
+            <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
+            <li class="breadcrumb-item"><a href="#" data-action="myStocks" data-t="">Stocks</a></li>
+            <li class="breadcrumb-item" data-t="">Lots</li>
         </ol>
         <%- include('./_account') %>
     </div>
@@ -17,18 +17,18 @@
         <template data-id="list">
             <div class="lot-tools">
                 <div class="lot-filter btn-group">
-                    <button type="button" class="btn btn-default" data-filter="all">
+                    <button type="button" class="btn-outline-secondary btn" data-filter="all">
                         <span data-t="">All</span>
                     </button>
-                    <button type="button" class="btn btn-default" data-filter="sale">
+                    <button type="button" class="btn-outline-secondary btn" data-filter="sale">
                         <span data-t="">Sale</span>
                     </button>
-                    <button type="button" class="btn btn-default" data-filter="purchase">
+                    <button type="button" class="btn-outline-secondary btn" data-filter="purchase">
                         <span data-t="">Purchase</span>
                     </button>
                 </div>
-                <div class="btn-group pull-right">
-                    <button type="button" class="btn btn-success" data-action="newLot">
+                <div class="btn-group float-right">
+                    <button type="button" class="btn-success btn" data-action="newLot">
                         <span data-t="">New lot</span>
                     </button>
                 </div>

@@ -17,7 +17,7 @@ module.exports = {
             secret: 'exchange.evado'
         },
         'i18n': {
-            // language: 'ru'
+            language: 'en'
         },
         'router': {
             // defaultModule: 'front'
@@ -62,7 +62,7 @@ module.exports = {
     },
     users: require('./default-users'),
     security: require('./default-security'),
-    notices: require('./default-notices'),
+    notifications: require('./default-notifications'),
     tasks: require('./default-tasks'),
     utilities: require('./default-utilities'),
     params: {

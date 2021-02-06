@@ -32,7 +32,7 @@ Front.Money = class Money {
     onDone (data) {
         this._deferred = null;
         data = data.items[0];
-        this._money = data && data.hasOwnProperty('money') ? data.money : null;
+        this._money = data?.hasOwnProperty('money') ? data.money : null;
         this.front.trigger('money:done', {money: this._money})
     }
 

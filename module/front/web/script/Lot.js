@@ -1,6 +1,6 @@
 'use strict';
 
-Front.Lot = class Lot extends Front.LoadableContent {
+Front.Lot = class Lot extends Front.Loadable {
 
     init () {
         super.init();
@@ -68,7 +68,7 @@ Front.Lot = class Lot extends Front.LoadableContent {
             }).done(data => {
                 this.front.getHandler('LotList').load();
                 this.front.money.load();
-                Jam.dialog.notice(data);
+                Jam.dialog.info(data);
             });
         });
     }
@@ -134,7 +134,7 @@ Front.MyLot = class MyLot extends Front.Lot {
         data.type = data.type_title;
         data.state = data._state_title;
         data.owner = data.owner._title;
-        data.getter = data.getter ? data.getter._title : null;
+        data.getter = data.getter?._title;
         data.dealDate = Jam.FormatHelper.asDatetime(data.dealDate);
         const template = this.state === 'draft' ? 'edit' : 'read';
         return this.resolveTemplate(template, data);
@@ -212,7 +212,7 @@ Front.MyLot = class MyLot extends Front.Lot {
     }
 };
 
-Front.NewLot = class NewLot extends Front.LoadableContent {
+Front.NewLot = class NewLot extends Front.Loadable {
 
     init () {
         super.init();
@@ -303,7 +303,7 @@ Front.NewLot = class NewLot extends Front.LoadableContent {
     }
 };
 
-Front.LotList = class LotList extends Front.LoadableContent {
+Front.LotList = class LotList extends Front.Loadable {
 
     init () {
         super.init();
@@ -344,7 +344,7 @@ Front.LotList = class LotList extends Front.LoadableContent {
     }
 
     render (data) {
-        let items = data && data.items;
+        let items = data?.items;
         items = Array.isArray(items) ? items : [];
         items = items.map(this.renderItem, this).join('') || this.resolveTemplate('empty');
         return this.resolveTemplate('list', {items});
@@ -366,10 +366,10 @@ Front.LotList = class LotList extends Front.LoadableContent {
     onDone (data) {
         const activeFilter = this.getActiveFilterData();
         super.onDone(data);
-        this.pagination.setTotal(data && data.totalSize);
+        this.pagination.setTotal(data?.totalSize);
         this.$content.append(this.pagination.render());
         this.setFilter(activeFilter);
-        this.translateContainer();
+        Jam.t(this.$container);
     }
 
     onDetail (event) {
@@ -392,8 +392,8 @@ Front.LotList = class LotList extends Front.LoadableContent {
     }
 
     setFilter (type) {
-        this.getActiveFilter().removeClass('btn-primary').addClass('btn-default');
-        this.getFilter().find(`[data-filter="${type}"]`).removeClass('btn-default').addClass('btn-primary');
+        this.getActiveFilter().removeClass('active');
+        this.getFilter().find(`[data-filter="${type}"]`).addClass('active');
     }
 
     getActiveFilterData () {
@@ -401,7 +401,7 @@ Front.LotList = class LotList extends Front.LoadableContent {
     }
 
     getActiveFilter () {
-        return this.getFilter().find('.btn-primary');
+        return this.getFilter().find('.active');
     }
 
     getFilter () {
