@@ -19,29 +19,31 @@
       "name": "companies",
       "label": "Companies",
       "orderNumber": 30,
-      "class": "company",
-      "options": {
-        "separatorAfter": true
-      }
+      "class": "company"
+    },
+    {
+      "name": "divider1",
+      "orderNumber": 40,
+      "type": "divider"
     },
     {
       "name": "myLots",
       "label": "My lots",
-      "orderNumber": 40,
+      "orderNumber": 50,
       "class": "lot",
       "view": "userLots"
     },
     {
       "name": "myStocks",
       "label": "My stocks",
-      "orderNumber": 50,
+      "orderNumber": 60,
       "class": "stock",
       "view": "userStocks"
     },
     {
       "name": "myTrader",
       "label": "My trader",
-      "orderNumber": 60,
+      "orderNumber": 70,
       "class": "trader",
       "view": "userTraders"
     }

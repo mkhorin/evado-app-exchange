@@ -65,6 +65,7 @@ module.exports = {
     notifications: require('./default-notifications'),
     tasks: require('./default-tasks'),
     utilities: require('./default-utilities'),
+    sideMenu: require('./default-sideMenu'),
     params: {
         'enablePasswordReset': false,
         'enableSignUp': false,
