@@ -8,8 +8,8 @@ Jam.Utility.ChangeMoney = class ChangeMoneyUtility extends Jam.Utility {
     execute () {
         const content = $('[data-id="changeMoneyForm"]').html();
         Jam.dialog.show(content, {
+            css: 'success',
             title: 'Change amount of money',
-            cssClass: 'success',
             beforeSubmit: this.onBeforeSubmit.bind(this)
         });
         this.$form = Jam.dialog.$container.find('.form');
