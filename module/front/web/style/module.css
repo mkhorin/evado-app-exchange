@@ -74,12 +74,6 @@ body {
     margin: 0 2rem 1rem 0;
 }
 
-/* BREADCRUMB */
-
-.breadcrumb {
-    background: #eff;
-}
-
 /* ACCOUNT */
 
 .account-block {
@@ -94,12 +88,10 @@ body {
 .lot-toggle {
     cursor: pointer;
     color: #666;
-    line-height: 42px;
-    border-left: 1px solid #ddd;
 }
 .lot-toggle:hover,
 .user-toggle:hover {
-    color: var(--primary);
+    color: var(--dark-primary);
 }
 .lot-toggle,
 .money-block,
@@ -168,7 +160,7 @@ body {
     padding: 15px;
     background: #fff;
     overflow: auto;
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 2px solid var(--dark-primary);
     text-align: center;
     max-width: 320px;
 }

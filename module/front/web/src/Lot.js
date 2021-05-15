@@ -16,7 +16,7 @@ Front.Lot = class Lot extends Front.Loadable {
     }
 
     hideModal () {
-        this.$modal.modal('hide');
+        this.modal?.hide();
     }
 
     getUrl (action = 'read') {
@@ -55,7 +55,7 @@ Front.Lot = class Lot extends Front.Loadable {
         this.$content.html('');
         this.$modalError.addClass('hidden');
         this.$modal.addClass('owned');
-        this.$modal.modal();
+        this.modal = Jam.showModal(this.$modal);
         this.load();
     }
 
@@ -172,7 +172,7 @@ Front.MyLot = class MyLot extends Front.Lot {
         this.id = lot;
         this.$content.html('');
         this.$modalError.addClass('hidden');
-        this.$modal.modal();
+        this.modal = Jam.showModal(this.$modal);
         this.load();
     }
 
@@ -275,7 +275,7 @@ Front.NewLot = class NewLot extends Front.Loadable {
     onNewLot (event) {
         this.$content.html('');
         this.$modalError.addClass('hidden');
-        this.$modal.modal();
+        this.modal = Jam.showModal(this.$modal);
         this.load();
     }
 
@@ -295,7 +295,7 @@ Front.NewLot = class NewLot extends Front.Loadable {
     }
 
     onCreateDone (data) {
-        this.$modal.modal('hide');
+        this.modal?.hide();
         this.front.getHandler('MyLotList').load();
     }
 
