@@ -4,7 +4,7 @@
       "$oid": "5ee6af6f8fef5f1ef4355125"
     },
     "name": "virus.svg",
-    "mime": "image/svg+xml",
+    "type": "image/svg+xml",
     "size": 1205,
     "file": "2020-06/5ee6af6f8fef5f1ef4355124",
     "createdAt": {
@@ -22,7 +22,7 @@
       "$oid": "5ee6af8b8fef5f1ef4355128"
     },
     "name": "atom.svg",
-    "mime": "image/svg+xml",
+    "type": "image/svg+xml",
     "size": 3652,
     "file": "2020-06/5ee6af8b8fef5f1ef4355127",
     "createdAt": {
@@ -40,7 +40,7 @@
       "$oid": "5ef29d73b79ac81008c73eb8"
     },
     "name": "leaf.svg",
-    "mime": "image/svg+xml",
+    "type": "image/svg+xml",
     "size": 801,
     "file": "2020-06/5ef29d73b79ac81008c73eb7",
     "createdAt": {
