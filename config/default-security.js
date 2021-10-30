@@ -38,7 +38,7 @@ module.exports = {
             type: 'class',
             class: 'trader'
         },
-        rule: 'user'
+        rules: 'user'
     }, {
         description: 'Trader can read his own stocks',
         roles: 'trader',
@@ -48,17 +48,17 @@ module.exports = {
             type: 'class',
             class: 'stock'
         },
-        rule: 'owner'
+        rules: 'owner'
     }, {
         description: 'Trader can manage his own lots',
         roles: 'trader',
         type: 'allow',
         actions: 'all',
         targets: {
-            type: 'class',
+            type: ['class', 'transition'],
             class: 'lot'
         },
-        rule: 'owner'
+        rules: 'owner'
     }, {
         description: 'Trader can read received lots',
         roles: 'trader',
@@ -68,7 +68,7 @@ module.exports = {
             type: 'class',
             class: 'lot'
         },
-        rule: 'getter'
+        rules: 'getter'
     }, {
         description: 'Trader can read any active lots',
         roles: 'trader',
