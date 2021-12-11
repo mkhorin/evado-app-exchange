@@ -1,85 +1,40 @@
+<template id="my-lots">
+    <div class="page">
 
-<div class="page" data-page="myLots" data-handler="MyLotsPage">
+        <breadcrumbs :user-money="userMoney">
+            <template #path>
+                <li class="breadcrumb-item">
+                    <a @click.prevent="toMain" href="#" data-t="">Main</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a @click.prevent="toMyStocks" href="#" data-t="">Stocks</a>
+                </li>
+                <li class="breadcrumb-item" data-t="">Lots</li>
+            </template>
+        </breadcrumbs>
 
-    <div class="page-head">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
-            <li class="breadcrumb-item"><a href="#" data-action="myStocks" data-t="">Stocks</a></li>
-            <li class="breadcrumb-item" data-t="">Lots</li>
-        </ol>
-        <%- include('./_account') %>
+        <h1 data-t="">My lots</h1>
+
+        <lots
+            @lot="onLot"
+            @new="onNewLot"
+            ref="lots"
+            meta-view="userLots"
+            :active-new="true"
+            :exclude="['owner']">
+        </lots>
+
+        <modal-lot @change="onChange" ref="lot" meta-view="edit" title="Lot"></modal-lot>
+
+        <modal-dialog ref="new" title="New lot">
+            <template #body>
+                <model-form ref="newForm" meta-class="lot"></model-form>
+            </template>
+            <template #footer>
+                <button @click="onCreate" class="btn-success btn">
+                    <span data-t="">Create</span>
+                </button>
+            </template>
+        </modal-dialog>
     </div>
-
-    <h1 data-t="">My lots</h1>
-
-    <div class="loadable-container" data-handler="MyLotList">
-
-        <template data-id="list">
-            <div class="lot-tools">
-                <div class="lot-filter btn-group">
-                    <button type="button" class="btn-outline-secondary btn" data-filter="all">
-                        <span data-t="">All</span>
-                    </button>
-                    <button type="button" class="btn-outline-secondary btn" data-filter="sale">
-                        <span data-t="">Sale</span>
-                    </button>
-                    <button type="button" class="btn-outline-secondary btn" data-filter="purchase">
-                        <span data-t="">Purchase</span>
-                    </button>
-                </div>
-                <div class="btn-group float-end">
-                    <button type="button" class="btn-success btn" data-action="newLot">
-                        <span data-t="">New lot</span>
-                    </button>
-                </div>
-            </div>
-            <div class="lot-items">##items##</div>
-        </template>
-
-        <template data-id="item">
-            <div class="lot-item row-item" data-id="##_id##">
-                <div class="lot-item-id cell">
-                    <div class="value">
-                        <a href="#" data-action="myLot">##_id##</a>
-                    </div>
-                </div>
-                <div class="lot-item-type cell">
-                    <div class="value" data-t="meta.class.lot">##type##</div>
-                </div>
-                <div class="lot-item-company cell">
-                    <label data-t="">Company</label>
-                    <div class="value" data-id="##companyId##">
-                        <a href="#" data-action="company">##company##</a>
-                    </div>
-                </div>
-                <div class="lot-item-shares cell">
-                    <label data-t="">Shares</label>
-                    <div class="value">##shares##</div>
-                </div>
-                <div class="lot-item-value cell">
-                    <label data-t="">Value</label>
-                    <div class="value">##value##</div>
-                </div>
-                <div class="lot-item-state cell">
-                    <label data-t="">State</label>
-                    <div class="value" data-t="meta.class.lot">##state##</div>
-                </div>
-            </div>
-        </template>
-
-        <%- include('./_pagination', {start: '##', end: '##'}) %>
-
-        <template data-id="empty">
-            <div class="alert-warning alert">
-                <span data-t="">No active lots</span>
-            </div>
-        </template>
-
-        <template data-id="error">
-            <div class="alert-danger alert">##text##</div>
-        </template>
-
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
-    </div>
-</div>
+</template>

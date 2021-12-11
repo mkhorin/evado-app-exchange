@@ -1,44 +1,43 @@
+<template id="company">
+    <div class="page">
+        <div class="loadable-container">
+            <template v-show="!loading">
 
-<div class="page" data-page="company" data-handler="CompanyPage">
+                <breadcrumbs :user-money="userMoney">
+                    <template #path>
+                        <li class="breadcrumb-item">
+                            <a @click.prevent="toMain" href="#" data-t="">Main</a>
+                        </li>
+                        <li class="breadcrumb-item" data-t="">Company</li>
+                    </template>
+                </breadcrumbs>
 
-    <div class="company loadable-container" data-handler="Company">
+                <h1 data-t="meta.class.company">{{name}}</h1>
 
-        <template data-id="company">
-            <div class="page-head">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
-                    <li class="breadcrumb-item" data-t="">Company</li>
-                </ol>
-                <%- include('./_account') %>
-            </div>
-
-            <h1 data-t="meta.class.company">{{name}}</h1>
-
-            <div class="row">
-                <div class="col-md-2 hidden-xs">
-                    <img data-src="<%- _url('/api/base/file/download') %>?c=logo&id={{logo}}"
-                         class="thumbnail-transparent img-thumbnail img-fluid" alt="{{name}}">
-                </div>
-                <div class="col-md-10">
-                    {{description}}
-                    <div class="company-shares">
-                        <b data-t="">Total shares:</b>
-                        {{shares}}
+                <div class="row">
+                    <div class="col-md-2 hidden-xs">
+                        <img v-if="logo" :src="logo" class="thumbnail-transparent img-thumbnail img-fluid" alt="">
+                    </div>
+                    <div class="col-md-10">
+                        {{description}}
+                        <div class="company-shares">
+                            <span data-t="">Total shares:</span>
+                            <b>{{shares}}</b>
+                        </div>
                     </div>
                 </div>
+
+                <div class="block mt-3">
+                    <h3 class="block-title" data-t="">Active lots</h3>
+                    <lots @lot="onLot" ref="lots" :company="company" :exclude="['company','state']"></lots>
+                </div>
+            </template>
+
+            <div v-show="loading" class="loader">
+                <i class="fa fa-spinner fa-spin"></i>
             </div>
+        </div>
 
-            <div class="block mt-3">
-                <h3 class="block-title" data-t="">Active lots</h3>
-                <%- include('./_companyLots') %>
-            </div>
-        </template>
-
-        <template data-id="error">
-            <div class="alert-danger alert">{{text}}</div>
-        </template>
-
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+        <modal-lot @deal="onDeal" ref="lot"></modal-lot>
     </div>
-</div>
+</template>

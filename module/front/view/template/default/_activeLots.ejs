@@ -1,0 +1,19 @@
+<template id="active-lots">
+    <div class="page">
+
+        <breadcrumbs :user-money="userMoney">
+            <template #path>
+                <li class="breadcrumb-item">
+                    <a @click.prevent="toMain" href="#" data-t="">Main</a>
+                </li>
+                <li class="breadcrumb-item" data-t="">Lots</li>
+            </template>
+        </breadcrumbs>
+
+        <h1 data-t="">Active lots</h1>
+
+        <lots @lot="onLot" ref="lots" :exclude="['state']"></lots>
+
+        <modal-lot @deal="onDeal" ref="lot"></modal-lot>
+    </div>
+</template>

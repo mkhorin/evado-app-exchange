@@ -21,6 +21,7 @@ Object.assign(Jam.I18n.defaults, {
     'Lots': 'Лоты',
 
     'Main': 'Главная',
+    'Make a deal now?': 'Заключить сделку сейчас?',
     'Message': 'Сообщение',
     'My lot': 'Мой лот',
     'My lots': 'Мои лоты',
@@ -36,5 +37,5 @@ Object.assign(Jam.I18n.defaults, {
     'Shares': 'Доли',
     'Stocks': 'Акции',
 
-    'Total shares:': 'Всего долей'
+    'Total shares:': 'Всего долей:'
 });

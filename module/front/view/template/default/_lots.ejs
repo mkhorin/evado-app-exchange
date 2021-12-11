@@ -1,79 +1,71 @@
+<template id="lots">
+    <div class="loadable-container">
 
-<div class="page" data-page="lots" data-handler="LotsPage">
-
-    <div class="page-head">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
-            <li class="breadcrumb-item" data-t="">Lots</li>
-        </ol>
-        <%- include('./_account') %>
-    </div>
-
-    <h1 data-t="">Active lots</h1>
-
-    <div class="loadable-container" data-handler="LotList">
-
-        <template data-id="list">
-            <div class="lot-tools">
-                <div class="lot-filter btn-group">
-                    <button type="button" class="btn-outline-secondary btn" data-filter="all">
-                        <span data-t="">All</span>
+        <div class="lot-tools">
+            <div class="lot-filter btn-group">
+                <template v-for="[value, label] of [[null,'All'],['sale','Sale'],['purchase','Purchase']]">
+                    <button @click="changeFilter(value)" type="button"
+                            :class="{'active': activeFilter === value, 'btn-outline-secondary btn': true}">
+                        <span data-t="">{{label}}</span>
                     </button>
-                    <button type="button" class="btn-outline-secondary btn" data-filter="sale">
-                        <span data-t="">Sale</span>
-                    </button>
-                    <button type="button" class="btn-outline-secondary btn" data-filter="purchase">
-                        <span data-t="">Purchase</span>
-                    </button>
-                </div>
+                </template>
             </div>
-            <div class="lot-items">##items##</div>
-        </template>
+            <div class="btn-group float-end">
+                <button v-if="activeNew" @click="onNew" type="button" class="btn-success btn">
+                    <span data-t="">New lot</span>
+                </button>
+            </div>
+        </div>
 
-        <template data-id="item">
-            <div class="lot-item row-item" data-id="##_id##">
+        <div class="lot-items">
+            <div v-for="item of items" :key="item.id" class="lot-item row-item">
                 <div class="lot-item-id cell">
                     <div class="value">
-                        <a href="#" data-action="lot">##_id##</a>
+                        <a @click.prevent="onLot(item)" href="#">{{item.id}}</a>
                     </div>
                 </div>
                 <div class="lot-item-type cell">
-                    <div class="value" data-t="meta.class.lot">##type##</div>
+                    <div :class="[item.type, 'value']">
+                        <i class="text-danger fas fa-sign-out-alt" data-id="sale"></i>
+                        <i class="text-success fas fa-sign-in-alt" data-id="purchase"></i>
+                        <span data-t="meta.class.lot">{{item.typeTitle}}</span>
+                    </div>
                 </div>
-                <div class="lot-item-company cell">
+                <div v-if="isCell('company')" class="lot-item-company cell">
                     <label data-t="">Company</label>
-                    <div class="value" data-id="##companyId##">
-                        <a href="#" data-action="company">##company##</a>
+                    <div class="value">
+                        <a @click.prevent="toCompany(item.company)" href="#">
+                            {{item.companyTitle}}
+                        </a>
                     </div>
                 </div>
                 <div class="lot-item-shares cell">
                     <label data-t="">Shares</label>
-                    <div class="value">##shares##</div>
+                    <div class="value">{{item.shares}}</div>
                 </div>
                 <div class="lot-item-value cell">
-                    <label data-t="">Value</label>
-                    <div class="value">##value##</div>
+                    <label data-t="meta.class.lot">Value</label>
+                    <div class="value">{{item.value}}</div>
                 </div>
-                <div class="lot-item-owner cell">
+                <div v-if="isCell('owner')" class="lot-item-owner cell">
                     <label data-t="">Owner</label>
-                    <div class="value">##owner##</div>
+                    <div class="value">{{item.ownerTitle}}</div>
+                </div>
+                <div v-if="isCell('state')" class="lot-item-state cell">
+                    <label data-t="">State</label>
+                    <div class="value" data-t="meta.class.lot">{{item.stateTitle}}</div>
                 </div>
             </div>
-        </template>
+        </div>
 
-        <%- include('./_pagination', {start: '##', end: '##'}) %>
+        <pagination></pagination>
 
-        <template data-id="empty">
-            <div class="alert-warning alert">
-                <span data-t="">No active lots</span>
-            </div>
-        </template>
+        <div v-show="!loading && empty" class="alert-warning alert">
+            <span data-t="">No lots found</span>
+        </div>
 
-        <template data-id="error">
-            <div class="alert-danger alert">##text##</div>
-        </template>
-
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+        <div v-show="loading" class="loader">
+            <i class="fa fa-spinner fa-spin"></i>
+        </div>
     </div>
-</div>
+</template>

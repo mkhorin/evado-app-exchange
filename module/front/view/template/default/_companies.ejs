@@ -1,0 +1,42 @@
+<template id="companies">
+    <div class="page">
+
+        <breadcrumbs :user-money="userMoney">
+            <template #path>
+                <li class="breadcrumb-item" data-t="">Main</li>
+            </template>
+        </breadcrumbs>
+
+        <h1 data-t="">Companies</h1>
+
+        <div class="loadable-container">
+
+            <div class="company-list">
+                <div class="row">
+                    <div v-for="item of items" :key="item.id" class="col-md-6 col-lg-3">
+                        <div class="company-card">
+                            <a v-if="item.logo" @click.prevent="toCompany(item.id)" href="#">
+                                <img :src="item.logo" :alt="item.name" class="img-thumbnail img-fluid">
+                            </a>
+                            <h3>
+                                <a @click.prevent="toCompany(item.id)" href="#">
+                                    <span data-t="meta.class.company">{{item.name}}</span>
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <pagination></pagination>
+
+            <div v-show="!loading && empty" class="alert-warning alert">
+                <span data-t="">No companies found</span>
+            </div>
+
+            <div v-show="loading" class="loader">
+                <i class="fa fa-spinner fa-spin"></i>
+            </div>
+        </div>
+    </div>
+</template>

@@ -4,29 +4,23 @@ body {
     --super-navbar-color: var(--dark-warning);
     --sidebar-width: 0;
 }
-.pagination {
-    margin-top: 20px;
-}
 .pagination > li > a {
     padding: 6px 12px;
 }
 .super-title {
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 .subtitle {
-    margin: 20px 0 30px;
-    font-size: 18px;
+    margin: 1.5rem 0 2rem;
+    font-size: 1.2rem;
     color: #444;
 }
-.modal-footer {
-    text-align: center;
-}
 .block {
-    padding: 15px;
+    padding: 1.2rem;
     background: #fff;
 }
 .block-title {
-    margin: 5px 0 20px;
+    margin: 0 0 2rem;
 }
 
 /* LOADABLE */
@@ -35,43 +29,53 @@ body {
     position: relative;
 }
 .loadable-container > .loader {
-    display: none;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 101;
-}
-.loadable-container.loading > .loader {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 /* PAGE */
 
-.page {
-    display: none;
-}
-.page.active {
-    display: block;
-}
 .page h1 {
-    font-size: 30px;
-    margin: 30px 0;
-}
-.page > h3 {
-    color: #888;
+    margin: 2rem 0;
 }
 .page-head {
     position: relative;
 }
-.page .icon-title h1 {
-    margin: 25px 0 10px;
+.page > h4 {
+    color: #888;
 }
-.page .icon-title .img-thumbnail {
-    margin: 0 2rem 1rem 0;
+
+/* FILES */
+
+.file-item + .file-item {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+.file-item-link {
+    margin: 10px 0;
+}
+.file-uploader-commands {
+    margin: .5rem 0 1rem;
+}
+.file-uploader-item {
+    position: relative;
+    padding-right: 35px;
+}
+.file-uploader-item + .file-uploader-item {
+    margin-top: 15px;
+}
+.file-uploader-item .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 /* ACCOUNT */
@@ -123,33 +127,6 @@ body {
     }
 }
 
-/* FILES */
-
-.file-item + .file-item {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-}
-.file-item-link {
-    margin: 10px 0;
-}
-.file-uploader-commands {
-    margin: 5px 0 15px;
-    text-align: right;
-}
-.file-uploader-item {
-    position: relative;
-    padding-right: 35px;
-}
-.file-uploader-item + .file-uploader-item {
-    margin-top: 15px;
-}
-.file-uploader-item .btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
 /* COMPANY */
 
 .company-card {
@@ -196,6 +173,14 @@ body {
 }
 .lot-item-type {
     width: 12%;
+}
+.lot-item-type [data-id] {
+    display: none;
+    margin-right: 3px;
+}
+.lot-item-type .sale [data-id="sale"],
+.lot-item-type .purchase [data-id="purchase"] {
+    display: inline-block;
 }
 .lot-item-company {
     width: 18%;

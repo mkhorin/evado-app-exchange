@@ -6,7 +6,13 @@
   "order": {
     "$key": -1
   },
+  "readOnly": false,
   "attrs": [
+    {
+      "name": "_state",
+      "hidden": true,
+      "orderNumber": 10
+    },
     {
       "name": "type",
       "orderNumber": 20

@@ -1,6 +1,6 @@
 {
   "name": "evado-app-exchange",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "Exchange App built on Evado Framework",
   "author": "Maxim Khorin",
   "license": "MIT",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "evado": "~5.0.0",
-    "evado-api-base": "~4.0.0",
+    "evado-api-base": "~4.1.0",
     "evado-api-navigation": "~2.1.0",
     "evado-meta-base": "~4.0.0",
     "evado-meta-navigation": "~2.1.0",

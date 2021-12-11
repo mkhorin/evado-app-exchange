@@ -1,0 +1,11 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "author": "Maxim Khorin",
+  "license": "MIT",
+  "repository": {},
+  "dependencies": {
+    "markdown": "^0.5.0",
+    "vue": "^2.6.14"
+  }
+}

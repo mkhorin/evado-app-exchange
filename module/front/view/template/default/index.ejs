@@ -1,29 +1,64 @@
 <%
 layout(_view.get('_layout/content'));
 
-script('front/vendor/front.min.js');
-script('front/script/module.js');
+script('front/vendor/vue/vue.js');
 
-const dataUrl = _url('/api/base/data/');
-const fileUrl = _url('/api/base/file/');
-const metaUrl = _url('/api/base/meta/');
+script('front/script/account.js');
+script('front/script/activeLots.js');
+script('front/script/breadcrumbs.js');
+script('front/script/companies.js');
+script('front/script/company.js');
+script('front/script/lots.js');
+script('front/script/mixin.js');
+script('front/script/modalDialog.js');
+script('front/script/modalLot.js');
+script('front/script/modelForm.js');
+script('front/script/modelFormAttr.js');
+script('front/script/modelFormDate.js');
+script('front/script/modelFormRadioList.js');
+script('front/script/modelFormRelationSelect.js');
+script('front/script/modelFormSelect.js');
+script('front/script/modelFormString.js');
+script('front/script/myLots.js');
+script('front/script/myStock.js');
+script('front/script/myStocks.js');
+script('front/script/pagination.js');
+script('front/script/front.js');
+
+const user = _controller.user;
 %>
+
+<%- include('./_account') %>
+<%- include('./_activeLots') %>
+<%- include('./_breadcrumbs') %>
+<%- include('./_companies') %>
+<%- include('./_company') %>
+<%- include('./_lots') %>
+<%- include('./_modalDialog') %>
+<%- include('./_modalLot') %>
+<%- include('./_modelForm') %>
+<%- include('./_modelFormDate') %>
+<%- include('./_modelFormRadioList') %>
+<%- include('./_modelFormRelationSelect') %>
+<%- include('./_modelFormSelect') %>
+<%- include('./_modelFormString') %>
+<%- include('./_myLots') %>
+<%- include('./_myStock') %>
+<%- include('./_myStocks') %>
+<%- include('./_pagination') %>
 
 <%- include(_view.get('_part/signboard')) %>
 
-<div class="front"
-     data-guest="<%- _controller.user.isGuest() %>"
-     data-user="<%- _controller.user.getId() %>"
-     data-data-url="<%- dataUrl %>"
-     data-meta-url="<%- metaUrl %>">
+<div id="front"
+     data-user-id="<%- user.getId() %>"
+     data-auth-url="<%- _url('/auth/sign-in?returnUrl=/front') %>"
+     data-data-url="<%- _url('/api/base/data') %>"
+     data-file-url="<%- _url('/api/base/file') %>"
+     data-meta-url="<%- _url('/api/base/meta') %>"
+     data-thumbnail-url="<%- _url('/api/base/file/thumbnail') %>?c=logo"
+     data-csrf="<%- _controller.getCsrfToken() %>">
 
-    <%- include('./_main') %>
-    <%- include('./_company') %>
-    <%- include('./_lots') %>
-    <%- include('./_lot') %>
-    <%- include('./_myLots') %>
-    <%- include('./_myLot') %>
-    <%- include('./_newLot') %>
-    <%- include('./_myStocks') %>
-    <%- include('./_stock') %>
+    <keep-alive include="companies">
+        <componen :is="activePage" v-bind="activePageProps" @deal="onDeal"></componen>
+    </keep-alive>
 </div>
