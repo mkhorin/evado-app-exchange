@@ -24,26 +24,29 @@ const front = new Vue({
     },
     computed: {
         activePageProps () {
-            switch (this.activePage) {
-                case 'company':
-                    return {
-                        ...this.defaultPageProps,
-                        key: this.activeCompany,
-                        company: this.activeCompany
-                    };
-                case 'my-stock':
-                    return {
-                        ...this.defaultPageProps,
-                        key: this.activeStock,
-                        stock: this.activeStock
-                    };
-            }
-            return this.defaultPageProps;
+            return {
+                ...this.defaultPageProps,
+                ...this.pageProps
+            };
         },
         defaultPageProps () {
             return {
                 userMoney: this.userMoney
             };
+        },
+        pageProps () {
+            switch (this.activePage) {
+                case 'company':
+                    return {
+                        key: this.activeCompany,
+                        company: this.activeCompany
+                    };
+                case 'my-stock':
+                    return {
+                        key: this.activeStock,
+                        stock: this.activeStock
+                    };
+            }
         }
     },
     created () {
