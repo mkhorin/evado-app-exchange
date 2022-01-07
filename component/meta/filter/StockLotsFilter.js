@@ -9,7 +9,7 @@ module.exports = class StockLotsFilter extends Base {
 
     async apply (query, model) {
         const trader = model.get('owner');
-        query.and(['OR', {owner: trader}, {getter: trader}]);
+        query.and(['or', {owner: trader}, {getter: trader}]);
         query.and({company: model.get('company')});
     }
 };

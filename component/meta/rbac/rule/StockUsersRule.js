@@ -9,7 +9,7 @@ module.exports = class StockUsersRule extends Base {
 
     constructor (config) {
         super({
-            objectFilter: true, // filter objects in a list
+            objectFilter: true,
             ...config
         });
     }
@@ -27,9 +27,15 @@ module.exports = class StockUsersRule extends Base {
         return this.isAllow() ? matched : !matched;
     }
 
-    async getObjectFilter () { // filter objects in list
+    /**
+     * Filter objects in list
+     */
+    async getObjectFilter () {
+        if (!this.objectFilter) {
+            return null;
+        }
         const trader = await this.resolveRefUser();
-        return this.objectFilter ? ['OR', {owner: trader}, {getter: trader}] : null;
+        return ['or', {owner: trader}, {getter: trader}];
     }
 
     async resolveRefUser () {
