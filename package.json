@@ -1,7 +1,7 @@
 {
   "name": "evado-app-exchange",
   "version": "5.1.0",
-  "description": "Exchange App built on Evado Framework",
+  "description": "Exchange web app built on Evado Framework",
   "author": "Maxim Khorin",
   "license": "MIT",
   "repository": {
