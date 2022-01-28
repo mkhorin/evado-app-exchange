@@ -67,11 +67,13 @@ Vue.component('model-form', {
                 this.showError(err);
             }
         },
-        loadMeta () {
-            return this.fetchMeta(this.metaView ? 'view' : 'class', {
-                class: this.metaClass,
-                view: this.metaView
+        async loadMeta () {
+            const data = await this.fetchMeta('class', {
+                class: this.metaClass
             });
+            return this.metaView
+                ? this.getMetaViewData(this.metaView, data)
+                : data;
         },
         loadData () {
             return this.id
@@ -90,6 +92,14 @@ Vue.component('model-form', {
                 class: this.metaClass,
                 view: this.metaView
             });
+        },
+        getMetaViewData (name, data) {
+            for (const view of data.views) {
+                if (view.name === name) {
+                    return view;
+                }
+            }
+            throw new Error(`Meta view not found: ${name}`);
         },
         build (meta, data) {
             this.metaData = this.prepareClassElements(meta, data);
