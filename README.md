@@ -1,4 +1,4 @@
-# Evado Exchange Web App
+# Exchange Web App
 
 An application built on [Evado Declarative Framework](https://github.com/mkhorin/evado)
 provides traders to buy and sell stocks.
