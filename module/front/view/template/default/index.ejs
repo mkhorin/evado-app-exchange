@@ -59,6 +59,6 @@ const user = _controller.user;
      data-csrf="<%- _controller.getCsrfToken() %>">
 
     <keep-alive include="companies">
-        <componen :is="activePage" v-bind="activePageProps" @deal="onDeal"></componen>
+        <component :is="activePage" v-bind="activePageProps" @deal="onDeal"></component>
     </keep-alive>
 </div>
