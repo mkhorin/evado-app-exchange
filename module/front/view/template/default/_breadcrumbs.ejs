@@ -1,28 +1,28 @@
 <template id="breadcrumbs">
-    <div class="page-head">
-        <ol class="breadcrumb">
-            <slot name="path">
-                <li class="breadcrumb-item" data-t="">Main</li>
-            </slot>
-        </ol>
-        <div class="account-block">
-            <% if (!_controller.user.isGuest()) { %>
-            <div class="money-block" data-t-title="" title="My money">
-                <i class="fas fa-wallet me-1"></i>
-                <i v-if="userMoney === null" class="fa fa-spinner fa-spin"></i>
-                <b v-else>{{userMoney}}</b>
-            </div>
-            <% } %>
-            <div @click="onActiveLots" class="lot-toggle" data-t="" title="Active lots">Lots</div>
-            <div class="user-toggle">
-                <div class="dropdown-toggle" title="Account" data-bs-toggle="dropdown">
-                    <span class="icon fa fa-user"></span>
-                </div>
-                <div class="dropdown-menu dropdown-menu-end">
-                    <a @click.prevent="toMyStocks" class="dropdown-item" href="#" data-t="">My stocks</a>
-                    <a @click.prevent="toMyLots" class="dropdown-item" href="#" data-t="">My lots</a>
-                </div>
-            </div>
+  <div class="page-head">
+    <ol class="breadcrumb">
+      <slot name="path">
+        <li class="breadcrumb-item" data-t="">Main</li>
+      </slot>
+    </ol>
+    <div class="account-block">
+      <% if (!_controller.user.isGuest()) { %>
+      <div class="money-block" data-t-title="" title="My money">
+        <i class="fas fa-wallet me-1"></i>
+        <i v-if="userMoney === null" class="fa fa-spinner fa-spin"></i>
+        <b v-else>{{userMoney}}</b>
+      </div>
+      <% } %>
+      <div @click="onActiveLots" class="lot-toggle" data-t="" title="Active lots">Lots</div>
+      <div class="user-toggle">
+        <div class="dropdown-toggle" title="Account" data-bs-toggle="dropdown">
+          <span class="icon fa fa-user"></span>
         </div>
+        <div class="dropdown-menu dropdown-menu-end">
+          <a @click.prevent="toMyStocks" class="dropdown-item" href="#" data-t="">My stocks</a>
+          <a @click.prevent="toMyLots" class="dropdown-item" href="#" data-t="">My lots</a>
+        </div>
+      </div>
     </div>
+  </div>
 </template>

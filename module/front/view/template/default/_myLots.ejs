@@ -1,40 +1,40 @@
 <template id="my-lots">
-    <div class="page">
+  <div class="page">
 
-        <breadcrumbs :user-money="userMoney">
-            <template #path>
-                <li class="breadcrumb-item">
-                    <a @click.prevent="toMain" href="#" data-t="">Main</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a @click.prevent="toMyStocks" href="#" data-t="">Stocks</a>
-                </li>
-                <li class="breadcrumb-item" data-t="">Lots</li>
-            </template>
-        </breadcrumbs>
+    <breadcrumbs :user-money="userMoney">
+      <template #path>
+        <li class="breadcrumb-item">
+          <a @click.prevent="toMain" href="#" data-t="">Main</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a @click.prevent="toMyStocks" href="#" data-t="">Stocks</a>
+        </li>
+        <li class="breadcrumb-item" data-t="">Lots</li>
+      </template>
+    </breadcrumbs>
 
-        <h1 data-t="">My lots</h1>
+    <h1 data-t="">My lots</h1>
 
-        <lots
-            @lot="onLot"
-            @new="onNewLot"
-            ref="lots"
-            meta-view="userLots"
-            :active-new="true"
-            :exclude="['owner']">
-        </lots>
+    <lots
+      @lot="onLot"
+      @new="onNewLot"
+      ref="lots"
+      meta-view="userLots"
+      :active-new="true"
+      :exclude="['owner']">
+    </lots>
 
-        <modal-lot @change="onChange" ref="lot" meta-view="edit" title="Lot"></modal-lot>
+    <modal-lot @change="onChange" ref="lot" meta-view="edit" title="Lot"></modal-lot>
 
-        <modal-dialog ref="new" title="New lot">
-            <template #body>
-                <model-form ref="newForm" meta-class="lot"></model-form>
-            </template>
-            <template #footer>
-                <button @click="onCreate" class="btn-success btn">
-                    <span data-t="">Create</span>
-                </button>
-            </template>
-        </modal-dialog>
-    </div>
+    <modal-dialog ref="new" title="New lot">
+      <template #body>
+        <model-form ref="newForm" meta-class="lot"></model-form>
+      </template>
+      <template #footer>
+        <button @click="onCreate" class="btn-success btn">
+          <span data-t="">Create</span>
+        </button>
+      </template>
+    </modal-dialog>
+  </div>
 </template>

@@ -1,56 +1,56 @@
 <template id="my-stock">
-    <div class="page">
-        <div class="loadable-container">
-            <template v-show="!loading">
+  <div class="page">
+    <div class="loadable-container">
+      <template v-show="!loading">
 
-                <breadcrumbs :user-money="userMoney">
-                    <template #path>
-                        <li class="breadcrumb-item">
-                            <a @click.prevent="toMain" href="#" data-t="">Main</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a @click.prevent="toMyStocks" href="#" data-t="">Stocks</a>
-                        </li>
-                        <li class="breadcrumb-item" data-t="">Stock</li>
-                    </template>
-                </breadcrumbs>
+        <breadcrumbs :user-money="userMoney">
+          <template #path>
+            <li class="breadcrumb-item">
+              <a @click.prevent="toMain" href="#" data-t="">Main</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a @click.prevent="toMyStocks" href="#" data-t="">Stocks</a>
+            </li>
+            <li class="breadcrumb-item" data-t="">Stock</li>
+          </template>
+        </breadcrumbs>
 
-                <h1 data-t="">{{id}}</h1>
+        <h1 data-t="">{{id}}</h1>
 
-                <div class="row">
-                    <div class="col-md-2 hidden-xs">
-                        <img v-if="logo" :src="logo" class="thumbnail-transparent img-thumbnail img-fluid" alt="">
-                    </div>
-                    <div class="col-md-10">
-                        <p>
-                            <span class="me-1" data-t="">Company:</span>
-                            <a @click.prevent="toCompany(company)" href="#">{{companyTitle}}</a>
-                        </p>
-                        <p>
-                            <span class="me-1" data-t="">My shares:</span>
-                            <b>{{shares}}</b>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="block mt-3">
-                    <h3 class="block-title" data-t="">Stock lots</h3>
-                    <lots
-                        @lot="onLot"
-                        meta-view="stockLots"
-                        ref="lots"
-                        :exclude="['company','owner']"
-                        :stock="stock">
-                    </lots>
-                </div>
-
-            </template>
-
-            <div v-show="loading" class="loader">
-                <i class="fa fa-spinner fa-spin"></i>
-            </div>
+        <div class="row">
+          <div class="col-md-2 hidden-xs">
+            <img v-if="logo" :src="logo" class="thumbnail-transparent img-thumbnail img-fluid" alt="">
+          </div>
+          <div class="col-md-10">
+            <p>
+              <span class="me-1" data-t="">Company:</span>
+              <a @click.prevent="toCompany(company)" href="#">{{companyTitle}}</a>
+            </p>
+            <p>
+              <span class="me-1" data-t="">My shares:</span>
+              <b>{{shares}}</b>
+            </p>
+          </div>
         </div>
 
-        <modal-lot @change="onChange" ref="lot" meta-view="edit" title="Lot"></modal-lot>
+        <div class="block mt-3">
+          <h3 class="block-title" data-t="">Stock lots</h3>
+          <lots
+            @lot="onLot"
+            meta-view="stockLots"
+            ref="lots"
+            :exclude="['company','owner']"
+            :stock="stock">
+          </lots>
+        </div>
+
+      </template>
+
+      <div v-show="loading" class="loader">
+        <i class="fa fa-spinner fa-spin"></i>
+      </div>
     </div>
+
+    <modal-lot @change="onChange" ref="lot" meta-view="edit" title="Lot"></modal-lot>
+  </div>
 </template>

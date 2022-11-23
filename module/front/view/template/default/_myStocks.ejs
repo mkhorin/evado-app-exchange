@@ -1,51 +1,51 @@
 <template id="my-stocks">
-    <div class="page">
+  <div class="page">
 
-        <breadcrumbs :user-money="userMoney">
-            <template #path>
-                <li class="breadcrumb-item">
-                    <a @click.prevent="toMain" href="#" data-t="">Main</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a @click.prevent="toMyLots" href="#" data-t="">Lots</a>
-                </li>
-                <li class="breadcrumb-item" data-t="">Stocks</li>
-            </template>
-        </breadcrumbs>
+    <breadcrumbs :user-money="userMoney">
+      <template #path>
+        <li class="breadcrumb-item">
+          <a @click.prevent="toMain" href="#" data-t="">Main</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a @click.prevent="toMyLots" href="#" data-t="">Lots</a>
+        </li>
+        <li class="breadcrumb-item" data-t="">Stocks</li>
+      </template>
+    </breadcrumbs>
 
-        <h1 data-t="">My stocks</h1>
+    <h1 data-t="">My stocks</h1>
 
-        <div class="loadable-container">
+    <div class="loadable-container">
 
-            <div class="stock-items">
-                <div v-for="item of items" :key="item.id" class="stock-item row-item">
-                    <div class="stock-item-id cell">
-                        <div class="value">
-                            <a @click.prevent="onStock(item.id)" href="#">{{item.id}}</a>
-                        </div>
-                    </div>
-                    <div class="stock-item-company cell">
-                        <label data-t="">Company</label>
-                        <div class="value">
-                            <a @click.prevent="toCompany(item.company)" href="#">{{item.companyTitle}}</a>
-                        </div>
-                    </div>
-                    <div class="stock-item-shares cell">
-                        <label data-t="">Shares</label>
-                        <div class="value">{{item.shares}}</div>
-                    </div>
-                </div>
+      <div class="stock-items">
+        <div v-for="item of items" :key="item.id" class="stock-item row-item">
+          <div class="stock-item-id cell">
+            <div class="value">
+              <a @click.prevent="onStock(item.id)" href="#">{{item.id}}</a>
             </div>
-
-            <pagination @change="load"></pagination>
-
-            <div v-show="!loading && empty" class="alert-warning alert">
-                <span data-t="">You have no stocks yet</span>
+          </div>
+          <div class="stock-item-company cell">
+            <label data-t="">Company</label>
+            <div class="value">
+              <a @click.prevent="toCompany(item.company)" href="#">{{item.companyTitle}}</a>
             </div>
-
-            <div v-show="loading" class="loader">
-                <i class="fa fa-spinner fa-spin"></i>
-            </div>
+          </div>
+          <div class="stock-item-shares cell">
+            <label data-t="">Shares</label>
+            <div class="value">{{item.shares}}</div>
+          </div>
         </div>
+      </div>
+
+      <pagination @change="load"></pagination>
+
+      <div v-show="!loading && empty" class="alert-warning alert">
+        <span data-t="">You have no stocks yet</span>
+      </div>
+
+      <div v-show="loading" class="loader">
+        <i class="fa fa-spinner fa-spin"></i>
+      </div>
     </div>
+  </div>
 </template>

@@ -1,35 +1,35 @@
 <template id="modal-lot">
-    <modal-dialog ref="modal" :title="fullTitle">
-        <template #body>
-            <model-form
-                @load="onLoad"
-                :id="lot"
-                meta-class="lot"
-                :meta-view="metaView"
-                :read-only="readOnly"
-                ref="form">
-            </model-form>
-        </template>
-        <template #footer>
-            <template v-if="own">
-                <button v-if="draft" @click="onSave" class="btn-primary btn">
-                    <span data-t="">Save</span>
-                </button>
-                <button v-if="draft" @click="onActivate" class="btn-success btn">
-                    <span data-t="">Activate</span>
-                </button>
-                <button v-if="active" @click="onDeactivate" class="btn-dark btn">
-                    <span data-t="">Deactivate</span>
-                </button>
-                <button v-if="draft" @click="onDelete" class="btn-danger btn">
-                    <span data-t="">Delete</span>
-                </button>
-            </template>
-            <template v-else>
-                <button v-if="active" @click="onDeal" class="btn-success btn">
-                    <span data-t="">Deal</span>
-                </button>
-            </template>
-        </template>
-    </modal-dialog>
+  <modal-dialog ref="modal" :title="fullTitle">
+    <template #body>
+      <model-form
+        @load="onLoad"
+        :id="lot"
+        meta-class="lot"
+        :meta-view="metaView"
+        :read-only="readOnly"
+        ref="form">
+      </model-form>
+    </template>
+    <template #footer>
+      <template v-if="own">
+        <button v-if="draft" @click="onSave" class="btn-primary btn">
+          <span data-t="">Save</span>
+        </button>
+        <button v-if="draft" @click="onActivate" class="btn-success btn">
+          <span data-t="">Activate</span>
+        </button>
+        <button v-if="active" @click="onDeactivate" class="btn-dark btn">
+          <span data-t="">Deactivate</span>
+        </button>
+        <button v-if="draft" @click="onDelete" class="btn-danger btn">
+          <span data-t="">Delete</span>
+        </button>
+      </template>
+      <template v-else>
+        <button v-if="active" @click="onDeal" class="btn-success btn">
+          <span data-t="">Deal</span>
+        </button>
+      </template>
+    </template>
+  </modal-dialog>
 </template>

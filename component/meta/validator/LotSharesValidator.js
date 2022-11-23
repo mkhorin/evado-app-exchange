@@ -15,15 +15,17 @@ module.exports = class LotSharesValidator extends Base {
         const meta = model.class.meta;
         const company = model.get('company');
         const owner = model.get('owner');
-        const stock = await meta.getClass('stock').find({company, owner}).one();
+        const stockQuery = meta.getClass('stock').find({company, owner});
+        const stock = await stockQuery.one();
         if (!stock) {
             return model.addError(name, 'Trader stock not found');
         }
-        const saleShares = await model.class.find({company, owner, type})
-            .and(['!=', '_state', 'closed'])
-            .and(model.getNotIdCondition())
-            .column('shares');
-        const total = saleShares.reduce((total, value) => total + value, 0) + model.get('shares');
+        const saleSharesQuery = model.class.find({company, owner, type})
+            .and(['!=', '_state', 'closed']) // not closed state
+            .and(model.getNotIdCondition()); // except this share
+        const saleShares = await saleSharesQuery.column('shares'); // get IDs
+        const reducer = (total, value) => total + value;
+        const total = saleShares.reduce(reducer, 0) + model.get('shares');
         if (total > stock.get('shares')) {
             return model.addError(name, 'Too many shares');
         }

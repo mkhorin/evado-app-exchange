@@ -27,9 +27,7 @@ Vue.component('model-form-relation-select', {
             }));
         },
         serialize () {
-            return this.value
-                ? {links: this.value}
-                : null;
+            return this.value || null;
         }
     },
     template: '#model-form-relation-select'

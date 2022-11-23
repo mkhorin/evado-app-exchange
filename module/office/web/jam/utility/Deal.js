@@ -13,21 +13,21 @@ Jam.Utility.Deal = class DealUtility extends Jam.Utility {
 
     execute () {
         const data = this.getRequestData();
-        Jam.toggleLoader(true);
+        Jam.showLoader();
         return Jam.post(this.getUrl(), data)
             .done(this.onDone.bind(this))
             .fail(this.onFail.bind(this));
     }
 
     onDone (data) {
-        Jam.toggleLoader(false);
+        Jam.hideLoader();
         return this.frame.reload({saved: true}).done(() => {
             this.getModel().alert.success(data);
         });
     }
 
     onFail (data) {
-        Jam.toggleLoader(false);
+        Jam.hideLoader();
         this.parseModelError(data);
     }
 };

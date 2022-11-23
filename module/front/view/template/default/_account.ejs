@@ -1,53 +1,53 @@
 <template id="account">
-    <div class="page">
+  <div class="page">
 
-        <breadcrumbs>
-            <template #path>
-                <li class="breadcrumb-item"><a @click.prevent="toMain" href="#" data-t="">Main</a></li>
-                <li class="breadcrumb-item" data-t="">Account</li>
-            </template>
-        </breadcrumbs>
+    <breadcrumbs>
+      <template #path>
+        <li class="breadcrumb-item"><a @click.prevent="toMain" href="#" data-t="">Main</a></li>
+        <li class="breadcrumb-item" data-t="">Account</li>
+      </template>
+    </breadcrumbs>
 
-        <h1 data-t="">My tasks</h1>
+    <h1 data-t="">My tasks</h1>
 
-        <div class="loadable-container">
+    <div class="loadable-container">
 
-            <div v-show="!empty" class="task-items">
-                <div v-for="item of items" :key="item.id" class="task-item row-item">
-                    <div class="task-item-id cell">
-                        <label data-t="">Task number</label>
-                        <div class="value">
-                            <a @click.prevent="onTask(item.id)" href="#">#{{item.id}}</a>
-                        </div>
-                    </div>
-                    <div class="task-item-state cell">
-                        <label data-t="">Current state</label>
-                        <div :class="[item.stateCss, 'value']">
-                            <span data-t="meta.class.task">{{item.stateTitle}}</span>
-                        </div>
-                    </div>
-                    <div class="task-item-question cell">
-                        <label data-t="">Question</label>
-                        <div class="value">
-                            <a @click.prevent="toQuestion(item.question)" href="#">{{item.questionTitle}}</a>
-                        </div>
-                    </div>
-                    <div class="task-item-grade cell">
-                        <label data-t="">Grade</label>
-                        <div class="value" data-t="meta.class.task.attr.grade">{{item.gradeTitle}}</div>
-                    </div>
-                </div>
+      <div v-show="!empty" class="task-items">
+        <div v-for="item of items" :key="item.id" class="task-item row-item">
+          <div class="task-item-id cell">
+            <label data-t="">Task number</label>
+            <div class="value">
+              <a @click.prevent="onTask(item.id)" href="#">#{{item.id}}</a>
             </div>
-
-            <pagination @change="load"></pagination>
-
-            <div v-show="!loading && empty" class="alert-warning alert">
-                <span data-t="">You have no assigned tasks yet</span>
+          </div>
+          <div class="task-item-state cell">
+            <label data-t="">Current state</label>
+            <div :class="[item.stateCss, 'value']">
+              <span data-t="meta.class.task">{{item.stateTitle}}</span>
             </div>
-
-            <div v-show="loading" class="loader">
-                <i class="fa fa-spinner fa-spin"></i>
+          </div>
+          <div class="task-item-question cell">
+            <label data-t="">Question</label>
+            <div class="value">
+              <a @click.prevent="toQuestion(item.question)" href="#">{{item.questionTitle}}</a>
             </div>
+          </div>
+          <div class="task-item-grade cell">
+            <label data-t="">Grade</label>
+            <div class="value" data-t="meta.class.task.attr.grade">{{item.gradeTitle}}</div>
+          </div>
         </div>
+      </div>
+
+      <pagination @change="load"></pagination>
+
+      <div v-show="!loading && empty" class="alert-warning alert">
+        <span data-t="">You have no assigned tasks yet</span>
+      </div>
+
+      <div v-show="loading" class="loader">
+        <i class="fa fa-spinner fa-spin"></i>
+      </div>
     </div>
+  </div>
 </template>
