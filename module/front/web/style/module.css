@@ -1,220 +1,220 @@
 body {
-    --back-light: #fafaf8;
-    --navbar-color: var(--light-warning);
-    --super-navbar-color: var(--dark-warning);
-    --sidebar-width: 0;
+  --back-light: #fafaf8;
+  --navbar-color: var(--light-warning);
+  --super-navbar-color: var(--dark-warning);
+  --sidebar-width: 0;
 }
 .pagination > li > a {
-    padding: 6px 12px;
+  padding: 6px 12px;
 }
 .super-title {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 .subtitle {
-    margin: 1.5rem 0 2rem;
-    font-size: 1.2rem;
-    color: #444;
+  margin: 1.5rem 0 2rem;
+  font-size: 1.2rem;
+  color: #444;
 }
 .block {
-    padding: 1.2rem;
-    background: #fff;
+  padding: 1.2rem;
+  background: #fff;
 }
 .block-title {
-    margin: 0 0 2rem;
+  margin: 0 0 2rem;
 }
 
 /* LOADABLE */
 
 .loadable-container {
-    position: relative;
+  position: relative;
 }
 .loadable-container > .loader {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 101;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* PAGE */
 
 .page h1 {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 .page-head {
-    position: relative;
+  position: relative;
 }
 .page > h4 {
-    color: #888;
+  color: #888;
 }
 
 /* FILES */
 
 .file-item + .file-item {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
 }
 .file-item-link {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 .file-uploader-commands {
-    margin: .5rem 0 1rem;
+  margin: .5rem 0 1rem;
 }
 .file-uploader-item {
-    position: relative;
-    padding-right: 35px;
+  position: relative;
+  padding-right: 35px;
 }
 .file-uploader-item + .file-uploader-item {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 .file-uploader-item .btn {
-    position: absolute;
-    right: 0;
-    top: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 /* ACCOUNT */
 
 .account-block {
-    position: absolute;
-    right: 0;
-    top: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .account-block > div {
-    display: inline-block;
+  display: inline-block;
 }
 .user-toggle,
 .lot-toggle {
-    cursor: pointer;
-    color: #666;
+  cursor: pointer;
+  color: #666;
 }
 .lot-toggle:hover,
 .user-toggle:hover {
-    color: var(--dark-primary);
+  color: var(--dark-primary);
 }
 .lot-toggle,
 .money-block,
 .user-toggle .dropdown-toggle {
-    padding: 0 12px;
+  padding: 0 12px;
 }
 
 /* ROW ITEMS */
 
 .row-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #f4f4f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f4f4f0;
 }
 .row-item:nth-child(odd) {
-    background: #fafafa;
+  background: #fafafa;
 }
 .row-item .cell {
-    padding: 15px;
-    overflow: hidden;
+  padding: 15px;
+  overflow: hidden;
 }
 .row-item .cell > label {
-    color: #888;
+  color: #888;
 }
 @media (max-width: 768px) {
-    .row-item .cell {
-        width: auto !important;
-    }
+  .row-item .cell {
+    width: auto !important;
+  }
 }
 
 /* COMPANY */
 
 .company-card {
-    margin: 0 auto 20px;
-    padding: 15px;
-    background: #fff;
-    overflow: auto;
-    border-bottom: 2px solid var(--dark-primary);
-    text-align: center;
-    max-width: 320px;
+  margin: 0 auto 20px;
+  padding: 15px;
+  background: #fff;
+  overflow: auto;
+  border-bottom: 2px solid var(--dark-primary);
+  text-align: center;
+  max-width: 320px;
 }
 .company-card .img-thumbnail {
-    margin: 0 auto;
-    max-width: 70%;
-    min-height: 120px;
-    border: none;
+  margin: 0 auto;
+  max-width: 70%;
+  min-height: 120px;
+  border: none;
 }
 .company-card a + h3 {
-    margin: 1rem 0 0;
+  margin: 1rem 0 0;
 }
 .company-card h3 a {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 1.2rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.2rem;
 }
 .company-shares {
-    margin-top: 20px;
-    font-size: 110%;
+  margin-top: 20px;
+  font-size: 110%;
 }
 
 /* LOT */
 
 .lot-tools {
-    text-align: left;
-    margin-bottom: 20px;
+  text-align: left;
+  margin-bottom: 20px;
 }
 .lot-item {
-    justify-content: left;
+  justify-content: left;
 }
 .lot-item-id {
-    width: 23%;
+  width: 23%;
 }
 .lot-item-type {
-    width: 12%;
+  width: 12%;
 }
 .lot-item-type [data-id] {
-    display: none;
-    margin-right: 3px;
+  display: none;
+  margin-right: 3px;
 }
 .lot-item-type .sale [data-id="sale"],
 .lot-item-type .purchase [data-id="purchase"] {
-    display: inline-block;
+  display: inline-block;
 }
 .lot-item-company {
-    width: 18%;
+  width: 18%;
 }
 .lot-item-shares {
-    width: 15%;
+  width: 15%;
 }
 .lot-item-value {
-    width: 15%;
+  width: 15%;
 }
 .company .lot-item-id {
-    width: 30%;
+  width: 30%;
 }
 .company .lot-item-type {
-    width: 15%;
+  width: 15%;
 }
 .company .lot-item-shares {
-    width: 15%;
+  width: 15%;
 }
 .company .lot-item-value {
-    width: 15%;
+  width: 15%;
 }
 .lot-modal.owned [data-command="deal"] {
-    display: none;
+  display: none;
 }
 
 /* STOCK */
 
 .stock-item-id {
-    width: 35%;
+  width: 35%;
 }
 .stock-item-company {
-    width: 35%;
+  width: 35%;
 }
 .stock-item-shares {
-    width: 30%;
+  width: 30%;
 }

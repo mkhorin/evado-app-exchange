@@ -39,13 +39,15 @@ Jam.Utility.ChangeMoney = class ChangeMoneyUtility extends Jam.Utility {
     onDone (data) {
         Jam.dialog.close();
         Jam.toggleLoader(false);
-        return this.frame.reload({saved: true})
-            .done(() => this.getModel().alert.success(data));
+        return this.frame.reload({saved: true}).done(() => {
+            return this.getModel().alert.success(data);
+        });
     }
 
     onFail (data) {
         Jam.toggleLoader(false);
-        this.$alert.removeClass('hidden').html(data.responseJSON || data.responseText);
+        this.$alert.html(data.responseJSON || data.responseText);
+        this.$alert.removeClass('hidden');
     }
 
     validate () {
@@ -61,7 +63,8 @@ Jam.Utility.ChangeMoney = class ChangeMoneyUtility extends Jam.Utility {
     }
 
     hasError () {
-        return !this.$alert.hasClass('hidden') || this.$form.find('.has-error').length > 0;
+        return !this.$alert.hasClass('hidden')
+            || this.$form.find('.has-error').length > 0;
     }
 
     addError (message, $element) {
