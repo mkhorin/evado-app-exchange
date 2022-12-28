@@ -10,7 +10,7 @@ module.exports = {
         Class: 'component/meta/utility/ChangeMoneyUtility',
         enabled: true,
         name: 'Change amount of money',
-        frontClass: 'ChangeMoney',
+        clientClass: 'ChangeMoney',
         targetClass: 'trader',
         actions: ['update']
     },
@@ -21,7 +21,7 @@ module.exports = {
         hint: 'Get this lot',
         confirmation: 'Get this lot now?',
         css: 'btn-success',
-        frontClass: 'Deal',
+        clientClass: 'Deal',
         targetClass: 'lot'
     }
 };
