@@ -25,8 +25,10 @@ module.exports = class LotSharesValidator extends Base {
             .and(model.getNotIdCondition()); // except this share
         const saleShares = await saleSharesQuery.column('shares'); // get IDs
         const reducer = (total, value) => total + value;
-        const total = saleShares.reduce(reducer, 0) + model.get('shares');
-        if (total > stock.get('shares')) {
+        const modelShares = model.get('shares');
+        const total = saleShares.reduce(reducer, 0) + modelShares;
+        const stockShares = stock.get('shares');
+        if (total > stockShares) {
             return model.addError(name, 'Too many shares');
         }
     }

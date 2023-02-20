@@ -103,7 +103,9 @@ Vue.component('model-form', {
         },
         build (meta, data) {
             this.metaData = this.prepareClassElements(meta, data);
-            this.root = this.rootGroup ? this.getGroup(this.rootGroup) : this.metaData;
+            this.root = this.rootGroup
+                ? this.getGroup(this.rootGroup)
+                : this.metaData;
             this.elements = this.root.elements;
         },
         getGroup (name) {
@@ -146,13 +148,23 @@ Vue.component('model-form', {
             return meta;
         },
         isVisibleAttr (attr) {
-            if (Array.isArray(this.visibleAttrs) && !this.visibleAttrs.includes(attr.name)) {
-                return false;
+            if (Array.isArray(this.visibleAttrs)) {
+                if (!this.visibleAttrs.includes(attr.name)) {
+                    return false;
+                }
             }
-            return !attr.hidden && (!attr.readOnly || !this.skipEmpty || !this.isEmptyAttr(attr));
+            if (!attr.hidden) {
+                if (!attr.readOnly || !this.skipEmpty || !this.isEmptyAttr(attr)) {
+                    return true;
+                }
+            }
+            return false;
         },
         isEmptyAttr ({value}) {
-            return value === null || value === '' || (Array.isArray(value) && !value.length);
+            if (value === null || value === '') {
+                return true;
+            }
+            return Array.isArray(value) && !value.length;
         },
         prepareAttrData (attr, data) {
             attr.readOnly = this.readOnly || attr.readOnly;
@@ -184,7 +196,8 @@ Vue.component('model-form', {
         async reset () {
             const data = await this.loadData();
             for (const ref of this.getRefElements()) {
-                ref.setValue(data.hasOwnProperty(ref.name) ? data[ref.name] : undefined);
+                const value = data.hasOwnProperty(ref.name) ? data[ref.name] : undefined;
+                ref.setValue(value);
             }
         }
     },

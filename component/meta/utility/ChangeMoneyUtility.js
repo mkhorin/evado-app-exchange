@@ -7,6 +7,13 @@ const Base = require('evado/component/utility/MetaUtility');
 
 module.exports = class ChangeMoneyUtility extends Base {
 
+    constructor (config) {
+        super({
+            maxMoney: 100000,
+            ...config
+        });
+    }
+
     async execute () {
         const params = await this.resolveMetaParams();
         const trader = params.model;
@@ -14,7 +21,8 @@ module.exports = class ChangeMoneyUtility extends Base {
         if (!this.validateMoney(amount, trader)) {
             throw new BadRequest('Invalid amount');
         }
-        trader.set('money', trader.get('money') + amount);
+        const money = trader.get('money');
+        trader.set('money', money + amount);
         await trader.update();
         const recipient = trader.get('user');
         await this.module.notify('balanceChanged', recipient, {amount});
@@ -22,7 +30,9 @@ module.exports = class ChangeMoneyUtility extends Base {
     }
 
     validateMoney (money, trader) {
-        return money && money < 100000 && trader.get('money') + money >= 0;
+        return money
+            && money < this.maxMoney
+            && trader.get('money') + money >= 0;
     }
 };
 

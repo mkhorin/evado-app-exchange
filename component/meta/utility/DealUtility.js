@@ -21,9 +21,11 @@ module.exports = class DealUtility extends Base {
 
     async execute () {
         const data = await this.resolveMetaParams();
-        const getter = await data.class.meta.getClass('trader').find({
+        const traderClass = data.class.meta.getClass('trader');
+        const traderQuery = traderClass.find({
             user: this.getUserId()
-        }).one();
+        });
+        const getter = await traderQuery.one();
         if (!getter) {
             throw new BadRequest('Trader not found');
         }
@@ -38,12 +40,13 @@ module.exports = class DealUtility extends Base {
         const company = await lot.related.resolve('company');
         const owner = await lot.related.resolve('owner');
         const recipient = owner.get('user');
-        return this.module.notify('dealDone', recipient, {
+        const data = {
             company: company.header.resolve(),
             type: lot.getDisplayValue('type'),
             shares: lot.get('shares'),
             value: lot.get('value')
-        });
+        };
+        return this.module.notify('dealDone', recipient, data);
     }
 
     /**
@@ -67,11 +70,13 @@ module.exports = class DealUtility extends Base {
         if (ownerShares < lotShares) {
             throw new BadRequest('Owner does not have enough shares');
         }
+        const getterShares = getterStock.get('shares');
         const getterStock = await this.resolveStock(company, getter);
-        owner.set('money', owner.get('money') + lotValue);
+        const ownerMoney = owner.get('money');
+        owner.set('money', ownerMoney + lotValue);
         getter.set('money', getterMoney - lotValue);
         ownerStock.set('shares', ownerShares - lotShares);
-        getterStock.set('shares', getterStock.get('shares') + lotShares);
+        getterStock.set('shares', getterShares + lotShares);
         lot.set('getter', getter.getId());
         lot.set('dealDate', new Date);
         lot.setState('closed');
@@ -103,11 +108,13 @@ module.exports = class DealUtility extends Base {
         if (getterShares < lotShares) {
             throw new BadRequest('Not enough shares');
         }
+        const getterMoney = getter.get('money');
         const ownerStock = await this.resolveStock(company, owner);
-        getter.set('money', getter.get('money') + lotValue);
+        const ownerShares = ownerStock.get('shares');
+        getter.set('money', getterMoney + lotValue);
         owner.set('money', ownerMoney - lotValue);
         getterStock.set('shares', getterShares - lotShares);
-        ownerStock.set('shares', ownerStock.get('shares') + lotShares);
+        ownerStock.set('shares', ownerShares + lotShares);
         lot.set('getter', getter.getId());
         lot.set('dealDate', new Date);
         lot.setState('closed');
@@ -125,11 +132,14 @@ module.exports = class DealUtility extends Base {
 
     async getStock (company, trader) {
         const owner = trader.getId();
-        return trader.class.meta.getClass('stock').find({company, owner}).one();
+        const stockClass = trader.class.meta.getClass('stock');
+        const query = stockClass.find({company, owner});
+        return query.one();
     }
 
     async createStock (company, trader) {
-        const model = await this.createModel(trader.class.meta.getClass('stock'));
+        const stockClass = trader.class.meta.getClass('stock');
+        const model = await this.createModel(stockClass);
         model.set('company', company);
         model.set('owner', trader.getId());
         if (await model.save()) {

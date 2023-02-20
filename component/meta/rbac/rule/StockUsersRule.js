@@ -23,7 +23,9 @@ module.exports = class StockUsersRule extends Base {
     async checkRefUser () {
         const trader = await this.resolveRefUser();
         const target = this.getTarget();
-        const matched = this.isEqual(target.get('owner'), trader) || this.isEqual(target.get('getter'), trader);
+        const owner = target.get('owner');
+        const getter = target.get('getter');
+        const matched = this.isEqual(owner, trader) || this.isEqual(getter, trader);
         return this.isAllow() ? matched : !matched;
     }
 
@@ -40,8 +42,10 @@ module.exports = class StockUsersRule extends Base {
 
     async resolveRefUser () {
         if (!this._refUserId) {
-            const userClass = this.getTarget().class.getAttr('owner').getRefClass();
-            this._refUserId = await userClass.find({user: this.getUserId()}).id();
+            const user = this.getUserId();
+            const target = this.getTarget();
+            const userClass = target.class.getAttr('owner').getRefClass();
+            this._refUserId = await userClass.find({user}).id();
         }
         return this._refUserId;
     }
