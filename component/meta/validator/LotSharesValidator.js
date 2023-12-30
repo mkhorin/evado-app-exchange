@@ -12,7 +12,7 @@ module.exports = class LotSharesValidator extends Base {
         if (model.get('type') !== type) {
             return true;
         }
-        const meta = model.class.meta;
+        const {meta} = model.class;
         const company = model.get('company');
         const owner = model.get('owner');
         const stockQuery = meta.getClass('stock').find({company, owner});
